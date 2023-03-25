@@ -1,0 +1,69 @@
+<div class="global">
+    <nav class="logo">
+        <h1 class="navbar-brand mb-0"><img src="/assets/Login/logo.png"></h1>
+    </nav>
+
+    <br>
+
+   <div class="container">
+        <div class="card" >
+            <div class="card-block">
+                    <h4 class="card-title">Sign In</h4>
+                <div class="cards">
+                    <form [formGroup]="f" novalidate>
+                        <div class="form-group" [class.has-danger]="((f.get('name').hasError('required') || f.get('name').hasError('email')) 
+                        && f.get('name').hasError('email') )&& f.get('name').touched">
+
+                            <label for="exampleInputEmail1">Insira suas credenciais para acessar sua conta</label>
+                            <br>
+                            <br>
+                            <input  formControlName="name" type="email" class="form-control" id="exampleInputEmail1" 
+                            [class.form-control-danger]="f.get('name').hasError('required') && f.get('name').touched"placeholder="Informe seu e-mail">
+                            
+                                <div *ngIf="f.get('name').hasError('required') && f.get('name').touched" class="form-control-feedback">
+                                    Ops...Inválido. Quer tentar outro?
+                                </div>
+                                <div *ngIf="f.get('name').hasError('email') && f.get('name').touched && !f.get('name').hasError('required')" class="form-control-feedback">
+                                    Oh Oh...Esse não é um email válido!
+                                </div>
+                        </div>
+                        <div class="form-group" [class.has-danger]="(f.get('password').hasError('required') || f.get('password').hasError('minlength')) && f.get('password').touched">
+
+                            <label for="exampleInputPassword1"></label>
+
+                            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" 
+                            [class.form-control-danger]="f.get('password').hasError('required') && f.get('password').touched"
+                            placeholder="Informe sua senha">
+            
+                                <div *ngIf="f.get('password').hasError('required') && f.get('password').touched" class="form-control-feedback">
+                                    Senha exigida
+                                </div>
+
+                                <div *ngIf="f.get('password').hasError('minlength') && f.get('password').touched" class="form-control-feedback">
+                                Sua senha deve conter 8 itens, vamos lá!
+                                </div>
+
+                                <div *ngIf="f.get('password').hasError('maxlength') && f.get('password').touched" class="form-control-feedback">
+                                    Sua senha deve conter 8 itens, não precisa tanto!
+                                </div>
+
+                        </div >  
+                        <button type="submit" class="btn btn-primary" (click)="fazerLogin()">Entrar</button>
+                        
+                        <button type="submit" (click)="onReset()" class="btn">Limpar </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="recover">
+            <div class="Redefinir">
+                <p>Esqueceu sua senha? <a href="" routerLink="redefinirSenha">Redefinir Senha</a></p>
+            </div>
+            
+            <div class="Cadastro">
+                <p>Ainda não tem uma conta? <a href="" routerLink="cadastro">Cadastre-se</a></p>
+            </div>
+        </div>
+    </div>
+<div>

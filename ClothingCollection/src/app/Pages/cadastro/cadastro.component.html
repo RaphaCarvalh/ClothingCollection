@@ -1,0 +1,179 @@
+<div class="global">
+    <nav class="logo">
+        <h1 class="navbar-brand mb-0"><img src="/assets/Login/logo.png"></h1>
+    </nav>
+
+    <br>
+
+   <div class="container">
+        <div class="card" >
+            <div class="card-block">
+                    <h4 class="card-title">Sign Up</h4>
+                <div class="cards">
+                    <form [formGroup]="f" novalidate>
+                        <label for="">Insira seus dados para criar uma conta</label>
+                        <br>
+                        <br>
+
+                        <div class="form-group" [class.has-danger]="(f.get('nome').hasError('required') || f.get('nome').hasError('minlength')) && f.get('nome').touched">
+
+                            <input formControlName="nome" type="text" class="form-control" id="exampleInputEmail1" 
+                            [class.form-control-danger]="f.get('nome').hasError('required') && f.get('nome').touched"
+                            placeholder="Nome">
+            
+                            <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
+                                Nome exigido!
+                            </div>
+
+                            <div *ngIf="f.get('nome').hasError('minlength') && f.get('nome').touched" class="form-control-feedback">
+                                Conta seu nome aí ou pode ser o apelido preferido!
+                            </div>
+
+                        
+                        <br>
+                            <input formControlName="nome" type="text" class="form-control" id="exampleInputEmail1" 
+                            [class.form-control-danger]="f.get('nome').hasError('required') && f.get('nome').touched"
+                            placeholder="Empresa" >
+            
+                            <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
+                                Nome exigido!
+                            </div>
+
+                            <div *ngIf="f.get('nome').hasError('minlength') && f.get('nome').touched" class="form-control-feedback">
+                                Qual o nome da sua Empresa!
+                            </div>                
+                        
+                        <br>
+                            <!-- <input name="cnpj" ng-model="cnpj" ng-cnpj ui-mask="99.999.999/9999-99" />myForm.cnpj.$valid: {{ myForm.cnpj.$valid }} -->
+
+                            <input formControlName="cnpj" type="text" class="form-control" id="exampleInputEmail1" 
+                            [class.form-control-danger]="f.get('cnpj').hasError('required') && f.get('cnpj').touched"
+                            placeholder="CNPJ">
+
+                            <div *ngIf="f.get('cnpj').hasError('required') && f.get('cnpj').touched" class="form-control-feedback">
+                                Numero exigido!
+                            </div>
+                        
+                            <div *ngIf="f.get('cnpj').hasError('minlength') && f.get('cnpj').touched" class="form-control-feedback">
+                                Ainda faltam numeros
+                            </div>
+
+                            <div *ngIf="f.get('cnpj').hasError('maxlength') && f.get('cnpj').touched" class="form-control-feedback">
+                                Ops..Numeros demais!
+                            </div>
+                            
+                            <div *ngIf="f.get('cnpj').hasError('pattern') && f.get('cnpj').touched" class="form-control-feedback">
+                                Somente numeros!
+                            </div>   
+                               
+                        <br>
+                                
+                            <div class="form-groupemail" [class.has-danger]="((f.get('name').hasError('required') || f.get('name').hasError('email')) 
+                            && f.get('name').hasError('email') )&& f.get('name').touched">
+
+                                <input  formControlName="name" type="email" class="form-control" id="exampleInputEmail1" 
+                                [class.form-control-danger]="f.get('name').hasError('required') && f.get('name').touched"placeholder="Inform seu e-mail">
+                                
+                                    <div *ngIf="f.get('name').hasError('required') && f.get('name').touched" class="form-control-feedback">
+                                        Ops...Inválido. Quer tentar outro?
+                                    </div>
+                                    <div *ngIf="f.get('name').hasError('email') && f.get('name').touched && !f.get('name').hasError('required')" class="form-control-feedback">
+                                        Oh Oh...Esse não é um email válido!
+                                    </div>
+                                    
+                            </div>
+                        </div>
+                        <div class="password">
+                                <div class="form-grouppass1" [class.has-danger]="(f.get('password').hasError('required') || f.get('password').hasError('minlength')) && f.get('password').touched">
+
+                                    <label for="exampleInputPassword1"></label>
+
+                                    <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" 
+                                    [class.form-control-danger]="f.get('password').hasError('required') && f.get('password').touched"
+                                    placeholder="Senha" [(ngModel)]="data.password">
+                    
+                                        <div *ngIf="f.get('password').hasError('required') && f.get('password').touched" class="form-control-feedback">
+                                            Senha exigida
+                                        </div>
+
+                                        <div *ngIf="f.get('password').hasError('minlength') && f.get('password').touched" class="form-control-feedback">
+                                        Sua senha deve conter 8 itens, vamos lá!
+                                        </div>
+
+                                        <div *ngIf="f.get('password').hasError('maxlength') && f.get('password').touched" class="form-control-feedback">
+                                            Sua senha deve conter 8 itens, não precisa tanto!
+                                        </div>
+
+                                </div >
+
+                              <div class="form-grouppass2" [class.has-danger]="(f.get('repassword').hasError('required') || f.get('repassword').hasError('minlength')) && f.get('repassword').touched">
+
+                                    <label for="exampleInputPassword1"></label>
+
+                                    <input formControlName="repassword" type="password" class="form-control" id="exampleInputrepassword" 
+                                    [class.form-control-danger]="f.get('repassword').hasError('required') && f.get('repassword').touched"
+                                    placeholder="Confirmar Senha" [(ngModel)]="data.password_confirm" >
+                    
+                                        <div *ngIf="f.get('repassword').hasError('required') && f.get('repassword').touched" class="form-control-feedback">
+                                            Oh oh, senha errada!
+                                        </div>
+
+                                        <div *ngIf="f.get('repassword').hasError('minlength') && f.get('repassword').touched" class="form-control-feedback">
+                                            Sua senha deve conter 8 itens, vamos lá!
+                                        </div>
+
+                                        <div *ngIf="f.get('repassword').hasError('maxlength') && f.get('password').touched" class="form-control-feedback">
+                                            Sua esta com mais de 8 itens, não precisa tanto!
+                                        </div>
+
+                                        <div *ngIf="data.password != data.password_confirm" class="form-control-feedback">
+                                            As senhas não coincidem!
+                                        </div>
+                                </div > 
+                        </div> 
+                        <div class="buttons">
+                            <button  type="submit" (click)="onSubmit( externalValidate())" class="btn btn-primary">Criar Conta</button>
+                            <button type="submit" (click)="onReset()" class="btn">Limpar </button>
+                            <!-- <div>{{ f.value | json}}</div>
+                            <div>{{ f.valid | json }}</div> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="recover">
+            <div class="Redefinir">
+                <p>Já possui uma uma conta?<a href="" routerLink="/">Realizar login</a></p>
+            </div>
+           
+        </div>
+    </div>
+</div>
+    <!-- <section class="mt-5">
+        <div class="container">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead class="thead-light text-center">
+                <tr>
+                  <th>Código</th>
+    
+                  <th class="w-50">Nome</th>
+    
+                  <th class="w-25">E-mail</th>
+                </tr>
+              </thead>
+    
+              <tbody>
+                <tr *ngFor="let contato of contatos">
+                  <td class="text-center w-25">{{CadastroComponent}}</td>
+    
+                  <td>{{CadastroComponent}}</td>
+    
+                  <td>{{CadastroComponent}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section> -->

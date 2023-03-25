@@ -1,0 +1,40 @@
+<div class="global">
+    <nav class="logo">
+        <h1 class="navbar-brand mb-0"><img src="/assets/Login/logo.png"></h1>
+    </nav>
+
+    <br>
+
+   <div class="container">
+        <div class="card" >
+            <div class="card-block">
+                
+                    <h4 class="card-title"><a href=""><img src="/assets/Login/arrow.png" class="arrow" routerLink="login"></a>Redefinir Senha<a href=""></a></h4>
+                    
+                <div class="cards">
+                    <form [formGroup]="f" novalidate>
+                        <div class="form-group" [class.has-danger]="((f.get('name').hasError('required') || f.get('name').hasError('email')) 
+                        && f.get('name').hasError('email') )&& f.get('name').touched">
+
+                            <label for="exampleInputEmail1">Digite o e-mail associado à sua conta e enviaremos instruções para redefinir sua senha.</label>
+                            <br>
+                            <br>
+                            <input  formControlName="name" type="email" class="form-control" id="exampleInputEmail1" 
+                            [class.form-control-danger]="f.get('name').hasError('required') && f.get('name').touched"placeholder="Informe seu e-mail">
+                            
+                                <div *ngIf="f.get('name').hasError('required') && f.get('name').touched" class="form-control-feedback">
+                                    Ops...Inválido. Quer tentar outro?
+                                </div>
+                                <div *ngIf="f.get('name').hasError('email') && f.get('name').touched && !f.get('name').hasError('required')" class="form-control-feedback">
+                                    Oh Oh...Esse não é um email válido!
+                                </div>
+                        </div>
+                        <br>
+                        <button type="submit" (click)="onSubmit(externalValidate)" class="btn btn-primary">Enviar recuperação</button>
+                        <button type="submit" (click)="onReset()" class="btn">Limpar </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

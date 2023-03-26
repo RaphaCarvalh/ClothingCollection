@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-import { cpf, cnpj } from 'cpf-cnpj-validator';
-import { URL_API } from 'src/app/api/app.api';
-import { User } from 'src/app/model/user';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { User } from '../../model/user';
 import { CadastroService } from 'src/app/services/cadastro.service';
+import { Router } from '@angular/router';
+
+
 
 
 @Component({
@@ -11,60 +12,72 @@ import { CadastroService } from 'src/app/services/cadastro.service';
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })
-export class CadastroComponent {
+export class CadastroComponent implements OnInit{
   f: FormGroup;
   form: any;
   formularioDeLogin: any;
   service: any;
   http: any;
- 
+  users: User[] = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private cadastroService: CadastroService,    
+    private router: Router,
+    private fb: FormBuilder) {}
 
+  ngOnInit(): void {
     this.f = this.fb.group({
 
       nome: ['', [Validators.required, Validators.minLength(3)]],
 
+      empresa: ['', [Validators.required, Validators.minLength(2)]],
+
       cnpj: ['', [Validators.required, Validators.minLength(14), Validators.maxLength(18), Validators.pattern("^[0-9]*$")]],
       
-      name: ['', [Validators.required, Validators.email, Validators.pattern]],
+      email: ['', [Validators.required, Validators.email]],
 
       password: ['', [Validators.required, , Validators.minLength(8), Validators.maxLength(8)]],
 
       repassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
+    })
+    this.listarUsers();
+  }
+
+  listarUsers() {
+    this.cadastroService.getUser().subscribe(data => {
+      if (!data) {
+        alert('erro')
+        return;
+      }
+      this.users = data;
+    })
+  }
+
+  async criarUser() {
+    const user: User = this.f.value;
+    console.log(user);   
+    await this.cadastroService.criarUser(user).subscribe(resultado => {
+      console.log(resultado);
     });
+    alert('Cadastro successful')
+    this.f.reset();
+    this.listarUsers()
   }
-
-  onSubmit(modal: any): void {
-    if (this.f.valid) {
-      console.log(this.f.getRawValue());
-      alert('Cadastro successful')
-      this.f.reset();  
-      
-    } else {
-
-      let temp = this.f.controls['name'];
-      console.log('the controls', this.f.controls);
-      console.log('name form', temp);
-      Object.keys(this.f.controls).forEach(key => {
-        this.f.get(key).markAsTouched();
-      });
-    }
-
-  }
-
+  
   onReset(): void {
     this.f.reset();
-  }
-
-  externalValidate() {
-    
   }
 
   data = {
     password: '',
     password_confirm: '',
   };
-}
+
+  externalValidate() {
+    
+  }
+
+
+  }
+
   
 

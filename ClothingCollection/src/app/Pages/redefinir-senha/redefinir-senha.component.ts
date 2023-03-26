@@ -24,14 +24,7 @@ export class RedefinirSenhaComponent {
       
       window.location.href = "../senhaRedefinida";
       // alert('successful')
-    } else {
-
-      let temp = this.f.controls['name'];
-      console.log('the controls', this.f.controls);
-      console.log('name form', temp);
-      Object.keys(this.f.controls).forEach(key => {
-        this.f.get(key).markAsTouched();
-      });
+        
     }
 
   }

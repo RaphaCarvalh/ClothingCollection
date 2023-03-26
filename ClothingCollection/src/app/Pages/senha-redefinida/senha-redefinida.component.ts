@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './senha-redefinida.component.html',
   styleUrls: ['./senha-redefinida.component.scss']
 })
+
 export class SenhaRedefinidaComponent {
   f: FormGroup;
   form: any;

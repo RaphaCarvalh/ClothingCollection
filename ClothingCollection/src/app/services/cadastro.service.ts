@@ -1,14 +1,16 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { URL_API } from '../api/app.api';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
-import { Router } from '@angular/router';
-import { User } from '../model/user';
+
 import { Modelos } from '../model/modelos';
 import { Colecoes } from '../model/colecoes';
+import { User } from '../model/user';
+import { Router } from '@angular/router';
+
 
 
 @Injectable({
@@ -16,9 +18,11 @@ import { Colecoes } from '../model/colecoes';
 })
 export class CadastroService {
 
-  private baseUrl = 'http://localhost:3000/tarefas';
+  private baseUrl = 'http://localhost:3000/user';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) { }
+  
+  
 //Pegando tudo
   getModelos(): Observable<Modelos[]> {
     return this.http.get<Modelos[]>(this.baseUrl)
@@ -35,41 +39,26 @@ export class CadastroService {
   }
 
 //Criando novo
-  CriarUser(user: User){
-    return this.http.post<User>(this.baseUrl, user)
-  }
-
-  // //Criando novo usuario com cabeçalho
-  // CriarUserCabecalho(user: User) {
-  //   const headers: any = {
-  //     Authorization: 'Bearer jwt'
-  //   }
-  //   return this.http.post<User>(this.baseUrl, user, headers)
-  // }
+  
+criarUser(user: User): Observable<User> {
+  return this.http.post<User>(`${this.baseUrl}`, user);
+}
 
 //Pegando tudo
   getUser(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl)
   }
 
-// //Pegando tudo cabecalho
-// getUser(): Observable<User[]> {
-//   return this.http.get<User[]>(this.baseUrl, Headers)
-// }
-
  //Excluir 
-  ExcluirAlgo(id: string){
-    return this.http.delete(`${this.baseUrl}/${id}`)
-  }
-
-   //atualizar 
-   AtualizarAlgo(user: User){
-    return this.http.put(`${this.baseUrl}/${user.id}`, user)
-  }
-
+ excluirUser(id: number): Observable<any> {
+  return this.http.delete<any>(`${this.baseUrl}/user/${id}`);
 }
-
-
+   //atualizar 
+ atualizarUser(user: User): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/tarefas/${user.id}`, user);
+  }
+  
+}
 
 
 
@@ -87,11 +76,28 @@ export class CadastroService {
 // clear() {
 //     localStorage.clear()
 //   }
-// isAuthenticated() {
+// c() {
 //     return (localStorage.getItem('user') !== null ? true : false);
 // }
   
-// logout() {
-//     this.clear();
-//     this.router.navigate(['/'])
-//   }
+  // criarUser(user: User){
+  //   return this.http.post<User>(this.baseUrl, user)
+  // }
+
+  // //Criando novo usuario com cabeçalho
+  // CriarUserCabecalho(user: User) {
+  //   const headers: any = {
+  //     Authorization: 'Bearer jwt'
+  //   }
+  //   return this.http.post<User>(this.baseUrl, user, headers)
+  // }
+
+// //Pegando tudo cabecalho
+// getUser(): Observable<User[]> {
+//   return this.http.get<User[]>(this.baseUrl, Headers)
+// }
+
+  //  logout() {
+  //   this.clear();
+  //   this.router.navigate(['/'])
+  // }

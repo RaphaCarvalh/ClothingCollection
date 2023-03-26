@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from 'src/app/services/cadastro.service';
-import { URL_API } from 'src/app/api/app.api';
 
 @Component({
   selector: 'app-cadastrados',

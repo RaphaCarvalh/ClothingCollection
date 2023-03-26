@@ -10,15 +10,14 @@
             <div class="card-block">
                     <h4 class="card-title">Sign Up</h4>
                 <div class="cards">
-                    <form [formGroup]="f" novalidate>
+                    <form [formGroup]="f">
                         <label for="">Insira seus dados para criar uma conta</label>
                         <br>
                         <br>
 
-                        <div class="form-group" [class.has-danger]="(f.get('nome').hasError('required') || f.get('nome').hasError('minlength')) && f.get('nome').touched">
+                        <div class="form-group">
 
                             <input formControlName="nome" type="text" class="form-control" id="exampleInputEmail1" 
-                            [class.form-control-danger]="f.get('nome').hasError('required') && f.get('nome').touched"
                             placeholder="Nome">
             
                             <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
@@ -31,15 +30,14 @@
 
                         
                         <br>
-                            <input formControlName="nome" type="text" class="form-control" id="exampleInputEmail1" 
-                            [class.form-control-danger]="f.get('nome').hasError('required') && f.get('nome').touched"
+                            <input formControlName="empresa" type="text" class="form-control" id="exampleInputEmail1" 
                             placeholder="Empresa" >
             
-                            <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
+                            <div *ngIf="f.get('empresa').hasError('required') && f.get('empresa').touched" class="form-control-feedback">
                                 Nome exigido!
                             </div>
 
-                            <div *ngIf="f.get('nome').hasError('minlength') && f.get('nome').touched" class="form-control-feedback">
+                            <div *ngIf="f.get('empresa').hasError('minlength') && f.get('empresa').touched" class="form-control-feedback">
                                 Qual o nome da sua Empresa!
                             </div>                
                         
@@ -47,7 +45,6 @@
                             <!-- <input name="cnpj" ng-model="cnpj" ng-cnpj ui-mask="99.999.999/9999-99" />myForm.cnpj.$valid: {{ myForm.cnpj.$valid }} -->
 
                             <input formControlName="cnpj" type="text" class="form-control" id="exampleInputEmail1" 
-                            [class.form-control-danger]="f.get('cnpj').hasError('required') && f.get('cnpj').touched"
                             placeholder="CNPJ">
 
                             <div *ngIf="f.get('cnpj').hasError('required') && f.get('cnpj').touched" class="form-control-feedback">
@@ -67,21 +64,16 @@
                             </div>   
                                
                         <br>
-                                
-                            <div class="form-groupemail" [class.has-danger]="((f.get('name').hasError('required') || f.get('name').hasError('email')) 
-                            && f.get('name').hasError('email') )&& f.get('name').touched">
+                            <input formControlName="email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
 
-                                <input  formControlName="name" type="email" class="form-control" id="exampleInputEmail1" 
-                                [class.form-control-danger]="f.get('name').hasError('required') && f.get('name').touched"placeholder="Inform seu e-mail">
-                                
-                                    <div *ngIf="f.get('name').hasError('required') && f.get('name').touched" class="form-control-feedback">
-                                        Ops...Inválido. Quer tentar outro?
-                                    </div>
-                                    <div *ngIf="f.get('name').hasError('email') && f.get('name').touched && !f.get('name').hasError('required')" class="form-control-feedback">
-                                        Oh Oh...Esse não é um email válido!
-                                    </div>
-                                    
+                            <div *ngIf="f.get('email').hasError('required') && f.get('email').touched" class="form-control-feedback">
+                                E-mail exigido!
                             </div>
+                        
+                            <div *ngIf="f.get('email').hasError('email') && f.get('email').touched" class="form-control-feedback">
+                                Esse não é um email válido!
+                            </div> 
+                            
                         </div>
                         <div class="password">
                                 <div class="form-grouppass1" [class.has-danger]="(f.get('password').hasError('required') || f.get('password').hasError('minlength')) && f.get('password').touched">
@@ -132,7 +124,7 @@
                                 </div > 
                         </div> 
                         <div class="buttons">
-                            <button  type="submit" (click)="onSubmit( externalValidate())" class="btn btn-primary">Criar Conta</button>
+                            <button  type="submit" class="btn btn-primary" (click)="criarUser()">Criar Conta</button>
                             <button type="submit" (click)="onReset()" class="btn">Limpar </button>
                             <!-- <div>{{ f.value | json}}</div>
                             <div>{{ f.valid | json }}</div> -->
@@ -150,30 +142,33 @@
         </div>
     </div>
 </div>
-    <!-- <section class="mt-5">
+
+    <section class="mt-5">
         <div class="container">
           <div class="table-responsive">
             <table class="table table-bordered table-hover">
               <thead class="thead-light text-center">
                 <tr>
-                  <th>Código</th>
-    
-                  <th class="w-50">Nome</th>
-    
-                  <th class="w-25">E-mail</th>
+                  <th>Nome</th>
+                  <th>empresa</th>
+                  <th class="w-20">cnpj</th>
+                  <th class="w-20">E-mail</th>
+                  <th class="w-20">id</th>
                 </tr>
               </thead>
     
               <tbody>
-                <tr *ngFor="let contato of contatos">
-                  <td class="text-center w-25">{{CadastroComponent}}</td>
-    
-                  <td>{{CadastroComponent}}</td>
-    
-                  <td>{{CadastroComponent}}</td>
+                <tr *ngFor="let user of users">
+                  <td class="text-center w-25">{{user.nome}}</td>
+                  <td>{{user.empresa}}</td>
+                  <td>{{user.cnpj}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.id}}</td>
                 </tr>
+              
+
               </tbody>
             </table>
           </div>
         </div>
-      </section> -->
+      </section>

@@ -5,7 +5,9 @@ import { RedefinirSenhaComponent } from './Pages/redefinir-senha/redefinir-senha
 import { SenhaRedefinidaComponent } from './Pages/senha-redefinida/senha-redefinida.component';
 import { CadastroComponent } from './Pages/cadastro/cadastro.component';
 import { HomeComponent } from './Pages/home/home.component';
-import { AuthGuard } from './Guard/auth.guard';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { UsuarioAutenticadoGuard } from './Guard/usuario-autenticado.guard';
+import { UsuarioNaoAutenticadoGuard } from './Guard/usuario-nao-autenticado.guard';
 
 
 const routes: Routes = [
@@ -16,8 +18,17 @@ const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
 
-
+  // { path: '', component: LoginComponent},
+  // {
+  //   path: 'home', component: HomeComponent, canActivate: [UsuarioAutenticadoGuard],
+  //   children: [
+  //     { path: 'dashboard', component: DashboardComponent }
+  //   ],
+  // },
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

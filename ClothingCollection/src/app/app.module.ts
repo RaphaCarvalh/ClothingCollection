@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CadastradosComponent } from './Components/cadastrados/cadastrados.component';
 import { HomeComponent } from './Pages/home/home.component';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeComponent } from './Pages/home/home.component';
     SenhaRedefinidaComponent,
     CadastroComponent,
     CadastradosComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent
   ],
   imports: [
     TooltipModule.forRoot(),

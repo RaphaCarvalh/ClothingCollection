@@ -14,7 +14,6 @@ import { SenhaRedefinidaComponent } from './Pages/senha-redefinida/senha-redefin
 import { CadastroComponent } from './Pages/cadastro/cadastro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { CadastradosComponent } from './Components/cadastrados/cadastrados.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 
@@ -26,7 +25,6 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
     RedefinirSenhaComponent,
     SenhaRedefinidaComponent,
     CadastroComponent,
-    CadastradosComponent,
     HomeComponent,
     DashboardComponent
   ],

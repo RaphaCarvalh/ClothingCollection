@@ -1,11 +1,6 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/do';
-
 import { Modelos } from '../model/modelos';
 import { Colecoes } from '../model/colecoes';
 import { User } from '../model/user';

@@ -13,19 +13,21 @@ import { UsuarioNaoAutenticadoGuard } from './Guard/usuario-nao-autenticado.guar
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'redefinirSenha', component: RedefinirSenhaComponent, },
-  { path: 'senhaRedefinida', component: SenhaRedefinidaComponent },
-  { path: 'cadastro', component: CadastroComponent },
-
-  { path: 'home', component: HomeComponent },
-
-  // { path: '', component: LoginComponent},
-  // {
-  //   path: 'home', component: HomeComponent, canActivate: [UsuarioAutenticadoGuard],
-  //   children: [
-  //     { path: 'dashboard', component: DashboardComponent }
-  //   ],
-  // },
 ];
+  // 
+  // 
+  // { path: 'senhaRedefinida', component: SenhaRedefinidaComponent },
+  // { path: 'cadastro', component: CadastroComponent },
+
+
+  // // { path: '', component: LoginComponent},
+  // // {
+  // //   path: 'home', component: HomeComponent, canActivate: [UsuarioAutenticadoGuard],
+  // //   children: [
+  // //     { path: 'dashboard', component: DashboardComponent }
+  // //   ],
+  // // },
+
 
 
 

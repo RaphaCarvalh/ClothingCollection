@@ -5,5 +5,5 @@ export interface User {
     empresa:string    
     cnpj: number;    
     email: string;
-    senha: string;
+    password: string;
 }

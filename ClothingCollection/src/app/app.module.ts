@@ -17,6 +17,8 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { LoginService } from './services/login.service';
 import { CadastroService } from './services/cadastro.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './Guard/auth.guard';
 
 @NgModule({
   declarations: [AppComponent,
@@ -41,7 +43,7 @@ import { CadastroService } from './services/cadastro.service';
     CommonModule,
 
   ],
-  providers: [LoginService, CadastroService],
+  providers: [AuthService,LoginService, CadastroService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

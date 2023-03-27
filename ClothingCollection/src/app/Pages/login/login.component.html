@@ -11,14 +11,14 @@
                     <h4 class="card-title">Sign In</h4>
                 <div class="cards">
                     <form [formGroup]="f" novalidate>
-                        <div class="form-group" [class.has-danger]="((f.get('name').hasError('required') || f.get('name').hasError('email')) 
-                        && f.get('name').hasError('email') )&& f.get('name').touched">
+                        <div class="form-group" [class.has-danger]="((f.get('email').hasError('required') || f.get('email').hasError('email')) 
+                        && f.get('email').hasError('email') )&& f.get('email').touched">
 
                             <label for="exampleInputEmail1">Insira suas credenciais para acessar sua conta</label>
                             <br>
                             <br>
                             <br>
-                            <input formControlName="email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <input formControlName="email" [(ngModel)]="usuario.email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
 
                             <div *ngIf="f.get('email').hasError('required') && f.get('email').touched" class="form-control-feedback">
                                 E-mail exigido!
@@ -34,7 +34,7 @@
 
                             <label for="exampleInputPassword1"></label>
 
-                            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" 
+                            <input formControlName="password" [(ngModel)]="usuario.password" type="password" class="form-control" id="exampleInputPassword1" 
                             [class.form-control-danger]="f.get('password').hasError('required') && f.get('password').touched"
                             placeholder="Informe sua senha">
             
@@ -51,9 +51,13 @@
                                 </div>
 
                         </div >  
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="submit" class="btn btn-primary" (click)="fazerLogin()">
+                            Entrar
+                        </button>
                         
-                        <button type="submit" (click)="onReset()" class="btn">Limpar </button>
+                        <button type="submit" (click)="onReset()" class="btn">
+                            Limpar
+                        </button>
                     </form>
                 </div>
             </div>

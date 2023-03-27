@@ -1,8 +1,12 @@
-import { Component, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../model/user';
+import { Usuario } from '../login/usuario';
+
 import { CadastroService } from 'src/app/services/cadastro.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 
 
@@ -13,7 +17,7 @@ import { Router } from '@angular/router';
 })
   
   
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   
   f: FormGroup;
   form: any;
@@ -22,12 +26,15 @@ export class LoginComponent {
   email: any;
   senha: any;
 
+  public usuario: Usuario = new Usuario();
+
 
   constructor(private cadastroService: CadastroService,
     private router: Router,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    public  authService : AuthService) { }
   
-    ngOnInit(): void {
+  ngOnInit(): void {
     this.f = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]]
@@ -36,32 +43,18 @@ export class LoginComponent {
   }
 
   
-  listarUsers() {
-    this.cadastroService.getUser().subscribe(data => {
-      if (!data) {
-        alert('erro')
-        return;
-      }
-      this.users = data;
-    })
-  }
-
-  //   listarUsers() {
+  // listarUsers() {
   //   this.cadastroService.getUser().subscribe(data => {
-  //     let logado = false;
-  //     data.map(value => {
-  //       if ((value.email === email && value.senha === senha)) {
-  //         this.logarUsuario();
-  //         logado = true;
-  //         return
-  //       }
-  //     })
-  //     if (!logado) {
-  //       alert("Nenhum Usuário Encontrado")
+  //     if (!data) {
+  //       alert('erro')
+  //       return;
   //     }
-  // })
-  
+  //     this.users = data;
+  //   })
   // }
+
+  listarUsers() { }
+   
 
   async criarUser() {
     if (this.f.valid) {
@@ -79,5 +72,15 @@ export class LoginComponent {
     this.f.reset();
   }
 
+  fazerLogin() {
+    console.log(this.usuario);
+    this.authService.fazerLogin(this.usuario)
+   
+  }
+
   
 }
+
+
+    // console.log(this.usuario);
+    // this.authService.fazerLogin(this.usuario);

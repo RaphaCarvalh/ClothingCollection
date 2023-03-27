@@ -16,5 +16,8 @@ export class MenuComponent {
       $("#wrapper").toggleClass("toggled");
     });
   }
-
+  //  logout() {
+  //   this.clear();
+  //   this.router.navigate(['/'])
+  // }
 }

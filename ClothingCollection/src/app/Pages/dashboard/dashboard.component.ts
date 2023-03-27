@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/services/usuario.service';
 
 
 @Component({
@@ -7,12 +6,29 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent{
 
-  constructor(private usuarioService: UsuarioService) { }
-
-  ngOnInit(): void {
-  }
-  
+  constructor() { }
   
 }
+
+
+
+//menu protegido pelo rota atraves do emitter
+
+// mostrarMenu: boolean = false;
+
+// constructor(private authService: AuthService) {
+
+// }
+
+// ngOnInit(){
+//   this.authService.mostrarMenuEmitter.subscribe(
+//     mostar => this.mostrarMenu = mostrar
+  
+//   );
+// }
+
+
+////
+// na parte do html adicionar um *ngIf="mostrarMenu" dentro da nav

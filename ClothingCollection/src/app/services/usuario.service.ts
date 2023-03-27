@@ -1,64 +1,95 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { User } from '../model/user';
-import { tap } from 'rxjs/operators';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-  constructor(private httpClient: HttpClient,
-              private router: Router) { }
-    logar(usuario: User) : Observable<any> {
-      /*return this.httpClient.post<any>(apiUrlUsuario + "/login", usuario).pipe(
-        tap((resposta) => {
-          if(!resposta.sucesso) return;
-          localStorage.setItem('token', btoa(JSON.stringify(resposta['token'])));
-          localStorage.setItem('usuario', btoa(JSON.stringify(resposta['usuario'])));
-          this.router.navigate(['']);
-        }));*/
-        return this.mockUsuarioLogin(usuario).pipe(tap((resposta) => {
-          if(!resposta.sucesso) return;
-          localStorage.setItem('token', btoa(JSON.stringify("TokenQueSeriaGeradoPelaAPI")));
-          localStorage.setItem('usuario', btoa(JSON.stringify(usuario)));
-          this.router.navigate(['']);
-        }));
-    }
-    private mockUsuarioLogin(usuario: User): Observable<any> {
-      var retornoMock: any = [];
-      if(usuario.email === "hello@balta.io" && usuario.senha == "123"){
-        retornoMock.sucesso = true;
-        retornoMock.usuario = usuario;
-        retornoMock.token = "TokenQueSeriaGeradoPelaAPI";
-        return of(retornoMock);
-      }
-      retornoMock.sucesso = false;
-      retornoMock.usuario = usuario;
-      return of(retornoMock);
-    }
-    deslogar() {
-        localStorage.clear();
-        this.router.navigate(['login']);
-    }
-    get obterUsuarioLogado(): User {
-      return localStorage.getItem('usuario')
-        ? JSON.parse(atob(localStorage.getItem('usuario')))
-        : null;
-    }
-    get obterIdUsuarioLogado(): string {
-      return localStorage.getItem('usuario')
-        ? (JSON.parse(atob(localStorage.getItem('usuario'))) as User).nome//definir id
-        : null;
-    }
-    get obterTokenUsuario(): string {
-      return localStorage.getItem('token')
-        ? JSON.parse(atob(localStorage.getItem('token')))
-        : null;
-    }
-    get logado(): boolean {
-      return localStorage.getItem('token') ? true : false;
-    }
-  }
+  constructor() { }
+
+}
+  
+  
+// //Pegando tudo
+// getModelos(): Observable<Modelos[]> {
+//   return this.http.get<Modelos[]>(this.baseUrl)
+// }
+// //buscando um item especifico
+// getModelo(id: string): Observable<Modelos> {
+//   return this.http.get<Modelos>(`${this.baseUrl}/${id}`)
+// }
+
+
+// //Pegando tudo
+// getColecoes(): Observable<Colecoes[]> {
+//   return this.http.get<Colecoes[]>(this.baseUrl)
+// }
+
+// //Criando novo
+
+// criarUser(user: User): Observable<User> {
+// return this.http.post<User>(`${this.baseUrl}`, user);
+// }
+
+// //Pegando tudo
+// getUser(): Observable<User[]> {
+//   return this.http.get<User[]>(this.baseUrl)
+// }
+
+// criarEmail(email: Email): Observable<Email> {
+//   return this.http.post<Email>(`${this.baseUrl}`, email);
+// } 
+
+// getEmail(): Observable<Email[]> {
+//   return this.http.get<Email[]>(this.baseUrl)
+// }
+
+// //Excluir 
+// excluirUser(id: number): Observable<any> {
+// return this.http.delete<any>(`${this.baseUrl}/user/${id}`);
+// }
+//  //atualizar 
+// atualizarUser(user: User): Observable<any> {
+//   return this.http.put<any>(`${this.baseUrl}/tarefas/${user.id}`, user);
+// }
+
+// métodos padrões para teste
+// constructor(private http: HttpClient, private router: Router) { }
+  
+// login(values: { email: string, password: string}) {
+//   return this.http.get<User[]>(`${URL_API}/users?email_like=` + values.email);
+// }
+
+// register (user: User) {
+//   return this.http.post<User>(`${URL_API}/users` , user);
+// }
+
+// clear() {
+//     localStorage.clear()
+//   }
+// c() {
+//     return (localStorage.getItem('user') !== null ? true : false);
+// }
+  
+  // criarUser(user: User){
+  //   return this.http.post<User>(this.baseUrl, user)
+  // }
+
+  // //Criando novo usuario com cabeçalho
+  // CriarUserCabecalho(user: User) {
+  //   const headers: any = {
+  //     Authorization: 'Bearer jwt'
+  //   }
+  //   return this.http.post<User>(this.baseUrl, user, headers)
+  // }
+
+// //Pegando tudo cabecalho
+// getUser(): Observable<User[]> {
+//   return this.http.get<User[]>(this.baseUrl, Headers)
+// }
+
+  //  logout() {
+  //   this.clear();
+  //   this.router.navigate(['/'])
+  // }

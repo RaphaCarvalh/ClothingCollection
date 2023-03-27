@@ -11,11 +11,17 @@
                     <h4 class="card-title"><a href=""><img src="/assets/Login/arrow.png" class="arrow" routerLink="login"></a>Redefinir Senha<a href=""></a></h4>
                 <div class="cards">
 
-                        <label for="exampleInputEmail1">Um link para redefinição de senha foi enviado para o e-mail </label>
+                        <label class="txt" for="exampleInputEmail1">Um link para redefinição de senha foi enviado para </label>
+                            <p class="txt" *ngFor="let email of emails">{{email.name}}</p>
+                       
                         <br>
 
-
-                        <button type="submit" (click)="onSubmit(externalValidate)" class="btn btn-primary">Ir para login</button>
+                        <tr *ngFor="let email of emails">
+                            <td>
+                        <button type="submit" class="btn btn-primary" (click)="deletaEmail(email)">Ir para login</button>
+                        
+                        </td>
+                    </tr>
                 </div>
             </div>
         </div>

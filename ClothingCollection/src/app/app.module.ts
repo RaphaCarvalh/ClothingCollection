@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { LoginComponent } from './Pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { MenuComponent } from './Components/menu/menu.component';
@@ -14,20 +13,18 @@ import { SenhaRedefinidaComponent } from './Pages/senha-redefinida/senha-redefin
 import { CadastroComponent } from './Pages/cadastro/cadastro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './Pages/home/home.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { LoginService } from './services/login.service';
+import { CadastroService } from './services/cadastro.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    MenuComponent,
-    RedefinirSenhaComponent,
-    SenhaRedefinidaComponent,
-    CadastroComponent,
-    HomeComponent,
-    DashboardComponent
+  declarations: [AppComponent,
+    LoginComponent, CadastroComponent,
+    DashboardComponent, RedefinirSenhaComponent,
+    SenhaRedefinidaComponent,MenuComponent
   ],
+
   imports: [
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
@@ -44,7 +41,7 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
     CommonModule,
 
   ],
-  providers: [],
+  providers: [LoginService, CadastroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

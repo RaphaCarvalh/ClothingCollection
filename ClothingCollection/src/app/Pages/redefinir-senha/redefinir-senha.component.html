@@ -12,7 +12,7 @@
                     <h4 class="card-title"><a href=""><img src="/assets/Login/arrow.png" class="arrow" routerLink="login"></a>Redefinir Senha<a href=""></a></h4>
                     
                 <div class="cards">
-                    <form [formGroup]="f" novalidate>
+                    <form [formGroup]="f"  novalidate>
                         <div class="form-group" [class.has-danger]="((f.get('name').hasError('required') || f.get('name').hasError('email')) 
                         && f.get('name').hasError('email') )&& f.get('name').touched">
 
@@ -30,7 +30,7 @@
                                 </div>
                         </div>
                         <br>
-                        <button type="submit" (click)="onSubmit(externalValidate)" class="btn btn-primary">Enviar recuperação</button>
+                        <button type="submit"  class="btn btn-primary"(click)="criarEmail()" >Enviar recuperação</button>
                         <button type="submit" (click)="onReset()" class="btn">Limpar </button>
                     </form>
                 </div>

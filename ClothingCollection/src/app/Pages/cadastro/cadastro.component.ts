@@ -33,7 +33,7 @@ export class CadastroComponent implements OnInit{
 
       cnpj: ['', [Validators.required, Validators.minLength(14), Validators.maxLength(18), Validators.pattern("^[0-9]*$")]],
       
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email, ]],
 
       password: ['', [Validators.required, , Validators.minLength(8), Validators.maxLength(8)]],
 
@@ -53,14 +53,16 @@ export class CadastroComponent implements OnInit{
   }
 
   async criarUser() {
-    const user: User = this.f.value;
-    console.log(user);   
-    await this.cadastroService.criarUser(user).subscribe(resultado => {
-      console.log(resultado);
-    });
-    alert('Cadastro successful')
-    this.f.reset();
-    this.listarUsers()
+    if (this.f.valid) {
+      const user: User = this.f.value;
+      console.log(user);
+      await this.cadastroService.criarUser(user).subscribe(resultado => {
+        console.log(resultado);
+      });
+      alert('Cadastro successful')
+      this.f.reset();
+      this.listarUsers()
+    }
   }
   
   onReset(): void {

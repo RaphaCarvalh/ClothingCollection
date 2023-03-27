@@ -17,16 +17,19 @@
                             <label for="exampleInputEmail1">Insira suas credenciais para acessar sua conta</label>
                             <br>
                             <br>
-                            <input  formControlName="name" type="email" class="form-control" id="exampleInputEmail1" 
-                            [class.form-control-danger]="f.get('name').hasError('required') && f.get('name').touched"placeholder="Informe seu e-mail">
+                            <br>
+                            <input formControlName="email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+
+                            <div *ngIf="f.get('email').hasError('required') && f.get('email').touched" class="form-control-feedback">
+                                E-mail exigido!
+                            </div>
+                        
+                            <div *ngIf="f.get('email').hasError('email') && f.get('email').touched" class="form-control-feedback">
+                                Esse não é um email válido!
+                            </div> 
                             
-                                <div *ngIf="f.get('name').hasError('required') && f.get('name').touched" class="form-control-feedback">
-                                    Ops...Inválido. Quer tentar outro?
-                                </div>
-                                <div *ngIf="f.get('name').hasError('email') && f.get('name').touched && !f.get('name').hasError('required')" class="form-control-feedback">
-                                    Oh Oh...Esse não é um email válido!
-                                </div>
                         </div>
+                        
                         <div class="form-group" [class.has-danger]="(f.get('password').hasError('required') || f.get('password').hasError('minlength')) && f.get('password').touched">
 
                             <label for="exampleInputPassword1"></label>
@@ -48,7 +51,7 @@
                                 </div>
 
                         </div >  
-                        <button type="submit" class="btn btn-primary" (click)="logar()">Entrar</button>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
                         
                         <button type="submit" (click)="onReset()" class="btn">Limpar </button>
                     </form>

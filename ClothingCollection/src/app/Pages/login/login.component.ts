@@ -1,8 +1,8 @@
 import { Component, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../model/user';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { UsuarioService } from '../../services/usuario.service';
+import { CadastroService } from 'src/app/services/cadastro.service';
+import { Router } from '@angular/router';
 
 
 
@@ -18,73 +18,36 @@ export class LoginComponent {
   f: FormGroup;
   form: any;
   loginService: any;
+  users: User[] = [];
+  email: any;
+  senha: any;
 
 
-  constructor(private fb: FormBuilder,
-    private usuarioService: UsuarioService,
-    private snackBar: MatSnackBar) {
-
+  constructor(private cadastroService: CadastroService,
+    private router: Router,
+    private fb: FormBuilder) { }
+  
+    ngOnInit(): void {
     this.f = this.fb.group({
-      name: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, , Validators.minLength(8), Validators.maxLength(8)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]]
     });
+    this.listarUsers();
   }
 
-// validar se será necessário
-  // ngOnInit(): void {
-  //   this.criarForm();
-  // }
-  // criarForm(){
-  //   this.formLogin = this.formBuilder.group({
-  //     email: ['', [Validators.required, Validators.email]],
-  //     senha: ['', [Validators.required]]
-  //   });
-  // }
-
-  onReset(): void {
-    this.f.reset();
-  }
-
-  externalValidate() {}
-
-  onSubmit() {}
   
-  
-  logar() {
-    if (this.f.invalid) return;
-    var usuario = this.f.getRawValue() as User;
-    this.usuarioService.logar(usuario).subscribe((response) => {
-      if (!response.sucesso) {
-        this.snackBar.open('Falha na autenticação', 'Usuário ou senha incorretos.', {
-          duration: 3000
-        });
+  listarUsers() {
+    this.cadastroService.getUser().subscribe(data => {
+      if (!data) {
+        alert('erro')
+        return;
       }
+      this.users = data;
     })
   }
-}
 
-
-
-
-
-  // // this.httpUsuario.validarUsuario().subscribe((data)=> {
-  //   let logado = false;
-  //   data.map(value => {
-  //     if ((value.email === email && value.senha === senha)) {
-  //       this.logarUsuario();
-  //       logado = true;
-  //       return
-  //     }
-  //   })
-  //   if (!logado) {
-  //     alert("Nenhum Usuario Encontrado");
-  //   }
-  // })
-
-
-  // fazerLogin() {
-  //   if(this.f.valid){
-  //     this.loginService.validarUsuario().subscribe((data)=> {
+  //   listarUsers() {
+  //   this.cadastroService.getUser().subscribe(data => {
   //     let logado = false;
   //     data.map(value => {
   //       if ((value.email === email && value.senha === senha)) {
@@ -94,29 +57,27 @@ export class LoginComponent {
   //       }
   //     })
   //     if (!logado) {
-  //       alert("Nenhum Usuario Encontrado");
+  //       alert("Nenhum Usuário Encontrado")
   //     }
-  //   })
+  // })
+  
+  // }
 
-  //    if (!data) {
-  //           alert('erro')
-  //           return;
-  //         }
-  //         this.User = data;
-  //       })
+  async criarUser() {
+    if (this.f.valid) {
+      const user: User = this.f.value;
+      console.log(user);
+      await this.cadastroService.criarUser(user).subscribe(resultado => {
+        console.log(resultado);
+      });
+      alert('Cadastro successful')
+      this.f.reset();
+      this.listarUsers()
+    }
+  }
+  onReset(): void {
+    this.f.reset();
+  }
 
-  //       console.log(this.f.getRawValue())
-
-
-  //         if (dataServer.length > 0) {
-  //           if (dataLogin.password == dataServer[0].password) {
-  //             alert('pode logar')
-  //         }else{
-  //             alert('não pode logar')
-  //           }
-  //         } else {
-  //           alert('Usuário não cadastrado')
-  //         }
-  //         // console.log(dataServer);
-  //       }
-  //   )
+  
+}

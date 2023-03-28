@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'app-colecoes',
+  templateUrl: './colecoes.component.html',
+  styleUrls: ['./colecoes.component.scss']
 })
-export class MenuComponent {
-
+export class ColecoesComponent {
   title = 'angularbootstrap';
-  
   ngOnInit() {
     //Toggle Click Function
     $("#menu-toggle").click(function (e) {
@@ -18,9 +16,6 @@ export class MenuComponent {
     });
   }
 
-  
-  //  logout() {
-  //   this.clear();
-  //   this.router.navigate(['/'])
-  // }
 }
+
+

@@ -16,27 +16,38 @@ export class AuthService {
 
 
   constructor(public router: Router,
-    private cadastroService: CadastroService,    
-    ) { }
+    private cadastroService: CadastroService,
+  ) { }
   fazerLogin(usuario: Usuario) {
+    this.cadastroService.getUser().subscribe(data => {
+      let logado = false;
+      console.log(this.users)
+      data.map(value => {
+        if ((usuario.email === value.email &&
+          usuario.password === value.password)) {
+
+          // if (usuario.email === "usuario@email.com" &&
+          //   usuario.password === '12345678') {
+      
+          this.usuarioAutenticado = true;
+
+          this.mostrarMenuEmitter.emit(true);
+      
+          this.router.navigate(['/dashboard']);
+
+        } else {
+          this.usuarioAutenticado = false;
+          this.mostrarMenuEmitter.emit(false);
+        }
+      }
+      )
+    }
+    )}
+
+
   
 
-    if (usuario.email === "usuario@email.com" &&
-      usuario.password === '12345678') {
-      
-      this.usuarioAutenticado = true;
-
-      this.mostrarMenuEmitter.emit(true);
-      
-      this.router.navigate(['/dashboard']);
-
-      } else {
-      this.usuarioAutenticado = false;
-      this.mostrarMenuEmitter.emit(false);
-      }
-  }
-
-  usuarioEstaAutenticado(){
+usuarioEstaAutenticado(){
     return this.usuarioAutenticado;
   }
 
@@ -62,3 +73,18 @@ export class AuthService {
 //     alert("Nenhum Usuário Encontrado")
 //   }
 // })
+
+/////////////////////////////////////////////////////////////
+    // if (usuario.email === "usuario@email.com" &&
+    //   usuario.password === '12345678') {
+      
+    //   this.usuarioAutenticado = true;
+
+    //   this.mostrarMenuEmitter.emit(true);
+      
+    //   this.router.navigate(['/dashboard']);
+
+    //   } else {
+    //   this.usuarioAutenticado = false;
+    //   this.mostrarMenuEmitter.emit(false);
+    //   }

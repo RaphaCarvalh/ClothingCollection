@@ -19,12 +19,18 @@ import { LoginService } from './services/login.service';
 import { CadastroService } from './services/cadastro.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './Guard/auth.guard';
+import { ColecoesComponent } from './Pages/colecoes/colecoes.component';
+import { ModelosComponent } from './Pages/modelos/modelos.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { TotalColecaoComponent } from './cards/total-colecao/total-colecao.component';
+import { MediaPOrcolecaoComponent } from './cards/media-porcolecao/media-porcolecao.component';
+
 
 @NgModule({
   declarations: [AppComponent,
     LoginComponent, CadastroComponent,
     DashboardComponent, RedefinirSenhaComponent,
-    SenhaRedefinidaComponent,MenuComponent
+    SenhaRedefinidaComponent,MenuComponent, ColecoesComponent, ModelosComponent, TotalColecaoComponent, MediaPOrcolecaoComponent
   ],
 
   imports: [
@@ -41,6 +47,8 @@ import { AuthGuard } from './Guard/auth.guard';
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+    CollapseModule.forRoot()
+    
 
   ],
   providers: [AuthService,LoginService, CadastroService, AuthGuard],

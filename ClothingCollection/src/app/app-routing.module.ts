@@ -7,6 +7,9 @@ import { LoginComponent } from './Pages/login/login.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { AuthGuard } from './Guard/auth.guard';
 import { MenuComponent } from './Components/menu/menu.component';
+import { ColecoesComponent } from './Pages/colecoes/colecoes.component';
+import { ModelosComponent } from './Pages/modelos/modelos.component';
+
 
 
 const routes: Routes = [
@@ -17,11 +20,20 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
 
 
-  { path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard],
-    children: [
-      { path: 'menu', component: MenuComponent }
-    ],
-  },
+  { path: 'dashboard', component: DashboardComponent },
+
+  { path: 'colecoes', component: ColecoesComponent },
+  { path: 'modelos', component: ModelosComponent },
+
+
+
+
+
+  // { path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard],
+  //   children: [
+      // { path: '', component:  }
+//     ],
+//   },
 ]
 
 @NgModule({

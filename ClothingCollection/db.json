@@ -10,40 +10,31 @@
       "senha": "123"
     },
     {
-      "nome": null,
-      "empresa": null,
-      "cnpj": null,
-      "email": null,
-      "password": null,
-      "repassword": null,
+      "nome": "test1",
+      "empresa": "ters",
+      "cnpj": "12345678912345",
+      "email": "usuario@email.com",
+      "password": "12345678",
+      "repassword": "12345678",
       "id": 2
     },
     {
-      "nome": "devone.r8",
-      "empresa": "com",
-      "cnpj": "123333333333333333",
-      "email": "devone.r8@gmail.com",
+      "nome": "rafa",
+      "empresa": "as",
+      "cnpj": "12345678912345",
+      "email": "raphaelmdecarvalho@gmail.com",
       "password": "12345678",
       "repassword": "12345678",
       "id": 3
     },
     {
-      "nome": "devone.",
-      "empresa": "r8",
-      "cnpj": "12345678912345",
-      "email": "usfrtrio@email.com",
+      "nome": "TesteUsuario",
+      "empresa": "teste",
+      "cnpj": "12345678901234",
+      "email": "teste@user.com",
       "password": "12345678",
       "repassword": "12345678",
       "id": 4
-    },
-    {
-      "nome": "asd",
-      "empresa": "asas",
-      "cnpj": "12345678912345",
-      "email": "usuario@email.com",
-      "password": "12345678",
-      "repassword": "12345678",
-      "id": 5
     }
   ],
   "modelos": [

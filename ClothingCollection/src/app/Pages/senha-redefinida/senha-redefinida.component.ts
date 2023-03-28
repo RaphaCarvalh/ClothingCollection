@@ -50,17 +50,17 @@ export class SenhaRedefinidaComponent implements OnInit{
     })
    }
   
-   async criarEmail() {
-    if (this.f.valid) {
-      const email: Email = this.f.value;
-      console.log(email);
-      await this.loginService.criarEmail(email).subscribe(resultado => {
-        console.log(resultado);
-      });
-      alert('Cadastro successful')
-      this.listarEmails()
-    }
-   }
+  //  async criarEmail() {
+  //   if (this.f.valid) {
+  //     const email: Email = this.f.value;
+  //     console.log(email);
+  //     await this.loginService.criarEmail(email).subscribe(resultado => {
+  //       console.log(resultado);
+  //     });
+  //     alert('Cadastro successful')
+  //     this.listarEmails()
+  //   }
+  //  }
   
   //  async deletaEmail(email:Email) {
   //    await this.loginService.excluirEmail(email.id).toPromise()

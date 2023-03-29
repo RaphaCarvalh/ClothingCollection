@@ -8,7 +8,7 @@
    <div class="container">
         <div class="card" >
             <div class="card-block">                
-                    <h4 class="card-title"><a href=""><img src="/assets/Login/arrow.png" class="arrow" routerLink="login"></a>Redefinir Senha<a href=""></a></h4>
+                    <h4 class="card-title"><a href=""><img src="/assets/Login/arrow.png" *ngFor="let email of emails" (click)="deletaEmail(email)" class="arrow" routerLink="login"></a>Redefinir Senha<a href=""></a></h4>
                 <div class="cards">
 
                         <label class="txt" for="exampleInputEmail1">Um link para redefinição de senha foi enviado para </label>

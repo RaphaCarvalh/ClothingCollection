@@ -20,21 +20,15 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
 
 
-  { path: 'dashboard', component: DashboardComponent },
-
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], },
   { path: 'colecoes', component: ColecoesComponent },
   { path: 'modelos', component: ModelosComponent },
-
-
-
-
+]
 
   // { path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard],
   //   children: [
-      // { path: '', component:  }
-//     ],
-//   },
-]
+   
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

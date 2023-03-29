@@ -16,6 +16,7 @@ export class SenhaRedefinidaComponent implements OnInit{
   form: any;
   emails: Email[] = [];
   user: any;
+  email: Email;
 
   constructor(private loginService: LoginService,
     private router: Router,

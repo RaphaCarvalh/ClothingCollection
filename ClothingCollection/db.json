@@ -10,24 +10,6 @@
       "senha": "123"
     },
     {
-      "nome": "test1",
-      "empresa": "ters",
-      "cnpj": "12345678912345",
-      "email": "usuario@email.com",
-      "password": "12345678",
-      "repassword": "12345678",
-      "id": 2
-    },
-    {
-      "nome": "rafa",
-      "empresa": "as",
-      "cnpj": "12345678912345",
-      "email": "raphaelmdecarvalho@gmail.com",
-      "password": "12345678",
-      "repassword": "12345678",
-      "id": 3
-    },
-    {
       "nome": "TesteUsuario",
       "empresa": "teste",
       "cnpj": "12345678901234",
@@ -35,6 +17,15 @@
       "password": "12345678",
       "repassword": "12345678",
       "id": 4
+    },
+    {
+      "nome": "rafa",
+      "empresa": "123",
+      "cnpj": "123456789123456789",
+      "email": "usuario@email.com",
+      "password": "12345678",
+      "repassword": "12345678",
+      "id": 5
     }
   ],
   "modelos": [

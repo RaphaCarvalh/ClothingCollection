@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width: 332px;
 }
 
 .sidenav .mat-toolbar {
@@ -15,3 +15,211 @@
   top: 0;
   z-index: 1;
 }
+
+//Lateral Menu Orientações
+
+.logomain{
+  display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    align-items: center;
+}
+
+.logo{
+  margin-top: 51px;
+  width: 168.07px;
+  height: 40px;
+  background: #FFFFFF;
+}
+
+.sidebar-heading{
+  position: relative;
+    width: 332px;
+    height: 982px;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    align-items: flex-start;
+    border-right: 1.75px solid #F0F0F0;
+
+}
+
+#menu{
+  margin-top:140px ;
+  color: #B4B6C1;
+  height: 17px;
+  font-size: 14px;
+  background: #FFFFFF;
+  padding-bottom: 50px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin-left: 40px;
+}
+
+.list{
+  background: #FFFFFF;
+  // width: 72px;
+  // margin-right: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-group-item{
+  color: #A4A4A4;;
+  background-color: #FFFFFF;
+  border: none;
+  width: 252.07px;
+  height: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-left: 30px;
+  // padding-bottom: 56px;
+  
+  
+ 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  display: flex;
+  flex-direction: row;
+  
+  text-align: center;
+}
+
+.list-group-item:hover{ 
+
+  color: #A4A4A4;;
+  background-color: #FFFFFF;
+  border: none;
+  width: 252.07px;
+  height: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-left: 30px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  display: flex;
+  align-self: center;  
+  background: #4C68FF;
+  color: #ffffff;;
+
+  border-radius: 7px;
+
+}
+
+//fim menu Lateral Menu Orientações
+//Menu superior
+#navbar{
+  background-color: #FFFFFF;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: row-reverse;
+  height: 120px;
+  width: 100%;
+  padding-right: 30px;
+  }
+
+  .fa-solid{
+  background-color: #FFFFFF;
+  
+  }
+  .container{
+  display: flex;
+  flex-direction: row;
+
+  background-color: #FFFFFF;
+  
+  }
+  .bell{
+  background-color: #FFFFFF;
+  padding-right: 40px;
+  }
+  
+  .user2{
+  height: 60px;
+  width: 60px;
+  background-color: #FFFFFF;
+  }
+  
+  button{
+    color:
+    #9395A3;
+  }
+
+
+  
+//Dropdown'que nao funciona :´( //////////
+
+  // .dropdown{
+  // background-color: #FFFFFF;
+  // }
+  
+
+// .dropdown-menu{
+//   padding: 16px;
+//   gap: 16px;
+//   background-color: #FFFFFF;
+//   border-bottom: #9395A3;
+  
+//   }
+
+// .btn{
+//   background-color: #FFFFFF;
+//   color: #D9D9D9;
+//   border: none;
+
+// }
+
+// .btn:hover{
+//   border: 1.5px solid #9395A3;
+//   transform: matrix(-1, 0, 0, 1, 0, 0);
+//   background-color: #D9D9D9;
+//   color: #FFFFFF;
+
+// }
+
+// .text{
+//   font-family: 'Inter';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 14px;
+//   line-height: 16px;
+//   background-color: #FFFFFF;
+//   padding: 5px;
+//   border-bottom: #9395A3;
+// }
+
+// .li{
+// justify-content: space-between;
+// border-bottom: #A4A4A4;
+// }
+
+
+
+  // .btn{
+  //   align-items: flex-start ;
+  //   justify-content: flex-start;
+  // }
+  
+  // .nav-link{
+  //   background-color: #FFFFFF;
+  //   border: none;
+  //   flex-direction: row;
+  
+  // }
+  // .nav-item1 i{
+  //   height: 50px;
+  //   width:50px;
+  //   background-color: #FFFFFF;
+  
+  // }

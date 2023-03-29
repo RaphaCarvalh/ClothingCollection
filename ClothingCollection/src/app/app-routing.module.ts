@@ -6,7 +6,6 @@ import { CadastroComponent } from './Pages/cadastro/cadastro.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { AuthGuard } from './Guard/auth.guard';
-import { MenuComponent } from './Components/menu/menu.component';
 import { ColecoesComponent } from './Pages/colecoes/colecoes.component';
 import { ModelosComponent } from './Pages/modelos/modelos.component';
 
@@ -14,7 +13,7 @@ import { ModelosComponent } from './Pages/modelos/modelos.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login',pathMatch: 'full'},
-  { path: '', component: LoginComponent },
+  { path: '', component: DashboardComponent },
   { path: 'redefinirSenha', component: RedefinirSenhaComponent },
   { path: 'senhaRedefinida', component: SenhaRedefinidaComponent },
   { path: 'cadastro', component: CadastroComponent },

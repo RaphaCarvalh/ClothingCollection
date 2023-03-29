@@ -1,28 +1,54 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>ClothingCollection</span>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-    <ng-content></ng-content>
-  </mat-sidenav-content>
+     <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+          <div class="logomain"><img class="logo" src="/assets/Elementos/logoname.png"> </div>
+          <mat-toolbar id="menu">MENU</mat-toolbar>
+          <mat-nav-list id="list">
+            <a href="/dashboard" class="list-group-item">Dashboard</a>
+            <a href="/colecoes" class="list-group-item">Coleções</a>
+            <a href="/modelos" class="list-group-item">Modelos</a>
+            <a href="/faq" class="list-group-item">Obter Ajuda</a>
+            <a href="/comentarios" class="list-group-item">Comentários</a>  
+
+          </mat-nav-list>
+      </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar id="navbar">
+          <div class="espace">
+          <!-- <button
+            type="button"
+            aria-label="Toggle sidenav"
+            mat-icon-button
+            (click)="drawer.toggle()"
+            *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button> -->
+          
+          <a class="bell" href="#"><i class="fa-solid fa-bell fa-1xl" style="color: #d9d9d9;"></i></a>
+          <a class="img" href="#"><img class="user2" src="/assets/Elementos/user.png"></a>
+          
+          <div mdbDropdown class="btn-group shadow-0">
+            <button
+              type="button"
+              class="btn btn-link dropdown-toggle"
+              mdbDropdownToggle
+              aria-expanded="false">
+            </button>
+              <ul mdbDropdownMenu class="dropdown-menu">
+                <li><a class="text1" href="#"><i class="fa-solid fa-person fa-xl"></i>Conta</a></li>
+                <li><a class="text2" href="#"><i class="fa-solid fa-sliders fa-xl"></i>Configurações</a></li>
+                <li><a class="text3" href="/"><i class="fa-solid fa-right-to-bracket fa-xl"></i> Sair</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div>            
+          </div>
+        </mat-toolbar>
+      <!-- Add Content Here -->
+      <ng-content></ng-content>
+    </mat-sidenav-content>
 </mat-sidenav-container>

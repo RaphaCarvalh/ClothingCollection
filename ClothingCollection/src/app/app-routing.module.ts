@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], },
   { path: 'colecoes', component: ColecoesComponent },
   { path: 'modelos', component: ModelosComponent },
+
 ]
 
   // { path: 'dashboard', component: DashboardComponent,canActivate:[AuthGuard],

@@ -16,37 +16,27 @@
       </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar id="navbar">
-          <div class="espace">
-          <!-- <button
-            type="button"
-            aria-label="Toggle sidenav"
-            mat-icon-button
-            (click)="drawer.toggle()"
-            *ngIf="isHandset$ | async">
-            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-          </button> -->
+          <div class="espace">         
           
-          <a class="bell" href="#"><i class="fa-solid fa-bell fa-1xl" style="color: #d9d9d9;"></i></a>
-          <a class="img" href="#"><img class="user2" src="/assets/Elementos/user.png"></a>
-          
-          <div mdbDropdown class="btn-group shadow-0">
-            <button
-              type="button"
-              class="btn btn-link dropdown-toggle"
-              mdbDropdownToggle
-              aria-expanded="false">
-            </button>
-              <ul mdbDropdownMenu class="dropdown-menu">
-                <li><a class="text1" href="#"><i class="fa-solid fa-person fa-xl"></i>Conta</a></li>
-                <li><a class="text2" href="#"><i class="fa-solid fa-sliders fa-xl"></i>Configurações</a></li>
-                <li><a class="text3" href="/"><i class="fa-solid fa-right-to-bracket fa-xl"></i> Sair</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            <a class="bell" href="#"><i class="fa-solid fa-bell fa-shake fa-xl" style="color: #d9d9d9;"></i></a>
+            <a class="img" href="#"><img class="user2" src="/assets/Elementos/user.png"></a>        
+
+            <div class="btn-group" dropdown placement="bottom right">
+              <button id="button-alignment" dropdownToggle type="button"
+                      class="btn btn-primary dropdown-toggle" aria-controls="dropdown-alignment">
+              <span class="caret"></span>
+              </button>
+              <ul id="dropdown-alignment" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+                  role="menu" aria-labelledby="button-alignment">
+                  <li role="menuitem"><i class="fa-solid fa-person fa-xl"></i><a class="dropdown-item" href="#">Conta</a></li>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><i class="fa-solid fa-sliders fa-xl"></i><a class="dropdown-item" href="#">Configurações</a></li>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><i class="fa-solid fa-right-to-bracket fa-xl"></i><a class="dropdown-item" href="#">Sair</a></li>
               </ul>
-            </div>            
+            </div>
           </div>
+          
         </mat-toolbar>
       <!-- Add Content Here -->
       <ng-content></ng-content>

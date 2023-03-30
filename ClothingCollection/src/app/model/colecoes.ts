@@ -1,5 +1,8 @@
 export interface Colecoes {
     id?: number;
-    nome: string;
-
+    colecao: string;
+    responsavel: string;
+    estacao: string;
+    modelo: string;
+    orcamento: string;
 }

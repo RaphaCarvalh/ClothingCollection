@@ -1,5 +1,6 @@
 export interface Modelos {
-    id?: number;
-    nome: string;
-    colecao: number;    
+    modeloid?: number;
+    nomedoproduto: string;
+    responsavel: string;
+    colecao: number; 
 }

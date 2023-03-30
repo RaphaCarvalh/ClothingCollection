@@ -1,26 +1,50 @@
 <app-menu-topo>
-<div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
+  
+  <div class="Cards">
+    <mat-toolbar class="titulo">
+          <span>Dashboard</span>
+        </mat-toolbar>    
+    <div class="cardglobal">        
+        <div class="card-one-top">
+          <div class="card-one">
+            <div class="card-body-one">
+              <h5 class="card-title">Coleções</h5>
+              <h6 class="card-subtitle">{{25}}</h6>                      
+            </div>
+          </div>        
+        </div>
+        <div class="card-one-two">
+          <div class="card-two">
+            <div class="card-body-two">
+              <h5 class="card-title">Modelos</h5>
+              <h6 class="card-subtitle">{{64}}</h6>                  
+            </div>
+        </div>   
+        </div>
+        <div class="card-one-three">
+          <div class="card-three">
+            <div class="card-body-three">
+              <div id="one">
+              <h5 class="card-title">Orçamento Médio (R$)</h5>
+              <h6 class="card-subtitle-sub-one">{{4700}}</h6>
+              </div>
+              <div id="two">
+              <h6 class="card-subtitle-sub-two"><i class="fa-sharp fa-solid fa-arrow-up fa-bounce fa-2xs" style="color: #37ff00;"></i>{{"25%"}}</h6>       
+              <h6 class="card-subtitle-sub-three">{{'Comparado com 01/23'}}</h6>    
+            </div>                     
+          </div>            
+       </div>   
+      </div>
+    </div>       
+  </div>
+    <div class="card-master">
+      <div class="card-one-four">
+        <div class="card-four">          
+            <h5 class="card-title-four">Maiores Orçamentos</h5>
+          </div>  
+            <div class="card-body-four"><app-dash></app-dash>
+          </div>         
+       
+    </div>
+  </div>
 </app-menu-topo>

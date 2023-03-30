@@ -8,6 +8,7 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { AuthGuard } from './Guard/auth.guard';
 import { ColecoesComponent } from './Pages/colecoes/colecoes.component';
 import { ModelosComponent } from './Pages/modelos/modelos.component';
+import { DashComponent } from './Components/dash/dash.component';
 
 
 

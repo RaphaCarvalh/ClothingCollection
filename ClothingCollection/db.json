@@ -1,15 +1,6 @@
 {
   "user": [
     {
-      "id": 1,
-      "idcontrole": "1",
-      "nome": "a",
-      "empresa": "b",
-      "email": "a",
-      "cnpj": "b",
-      "senha": "123"
-    },
-    {
       "nome": "TesteUsuario",
       "empresa": "teste",
       "cnpj": "12345678901234",
@@ -17,37 +8,25 @@
       "password": "12345678",
       "repassword": "12345678",
       "id": 4
-    },
-    {
-      "nome": "rafa",
-      "empresa": "123",
-      "cnpj": "123456789123456789",
-      "email": "usuario@email.com",
-      "password": "12345678",
-      "repassword": "12345678",
-      "id": 5
     }
   ],
   "modelos": [
     {
-      "id": 1,
-      "nome": "Modelo 1",
-      "colecao": 1
-    },
-    {
-      "id": 2,
-      "nome": "Modelo 2",
-      "colecao": 1
+      "modeloid?": 1,
+      "nomedoproduto": "string",
+      "responsavel": "string",
+      "colecao": 3
     }
   ],
+
   "colecoes": [
     {
-      "id": 1,
-      "nome": "Coleção 1"
-    },
-    {
-      "id": 2,
-      "nome": "Coleção 2"
+      "id?": 1,
+      "colecao": "string",
+      "responsavel": "string",
+      "estacao": "string",
+      "modelo": "string",
+      "orcamento": "string"
     }
   ],
   "email": []

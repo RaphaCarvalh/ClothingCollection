@@ -37,7 +37,16 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { AlertModule,AlertConfig } from 'ngx-bootstrap/alert';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
-import { BsDropdownModule,BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { BsDropdownModule, BsDropdownConfig } from 'ngx-bootstrap/dropdown';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { DashComponent } from './Components/dash/dash.component';
+import { CollectComponent } from './Components/collect/collect.component';
+import { ModelsComponent } from './Components/models/models.component';
+
+
+
 
 
 
@@ -53,7 +62,11 @@ import { BsDropdownModule,BsDropdownConfig } from 'ngx-bootstrap/dropdown';
     ModelosComponent,
     TotalColecaoComponent,
     MediaPOrcolecaoComponent,
-    MenuTopoComponent
+    MenuTopoComponent,
+    DashComponent,
+    CollectComponent,
+    ModelsComponent,
+    
   ],
 
   imports: [
@@ -89,7 +102,10 @@ import { BsDropdownModule,BsDropdownConfig } from 'ngx-bootstrap/dropdown';
     CarouselModule,
     CollapseModule,
     BsDatepickerModule.forRoot(),
-    BsDropdownModule
+    BsDropdownModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   
     
 

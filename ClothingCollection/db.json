@@ -8,47 +8,156 @@
       "password": "12345678",
       "repassword": "12345678",
       "id": 4
+    },
+    {
+      "nome": "João da Silva",
+      "empresa": "XYZ",
+      "cnpj": "12345678901234",
+      "email": "joao.silva@xyz.com",
+      "password": "abcdefgh",
+      "repassword": "abcdefgh",
+      "id": 5
+    },
+    {
+      "nome": "Maria Oliveira",
+      "empresa": "ABC",
+      "cnpj": "12345678901234",
+      "email": "maria.oliveira@abc.com",
+      "password": "ijklmnop",
+      "repassword": "ijklmnop",
+      "id": 6
+    },
+    {
+      "nome": "Pedro Santos",
+      "empresa": "DEF",
+      "cnpj": "12345678901234",
+      "email": "pedro.santos@def.com",
+      "password": "qrstuvwx",
+      "repassword": "qrstuvwx",
+      "id": 7
     }
   ],
   "modelos": [
     {
-      "modeloid?": 1,
-      "nomedoproduto": "string",
-      "responsavel": "string",
+      "modeloid": 1,
+      "nomedoproduto": "Tênis Casual",
+      "responsavel": "João da Silva",
+      "colecao": 1
+    },
+    {
+      "modeloid": 2,
+      "nomedoproduto": "Sapato Social",
+      "responsavel": "Pedro Oliveira",
+      "colecao": 7
+    },
+    {
+      "modeloid": 3,
+      "nomedoproduto": "Camiseta Básica",
+      "responsavel": "Ana Silva",
+      "colecao": 6
+    },
+    {
+      "modeloid": 4,
+      "nomedoproduto": "Blusa de Frio",
+      "responsavel": "Mariana Costa",
       "colecao": 3
     },
     {
-      "modeloid?":2,
-      "nomedoproduto": "string",
-      "responsavel": "string",
-      "colecao": 5
+      "modeloid": 5,
+      "nomedoproduto": "Calça Jeans",
+      "responsavel": "Lucas Santos",
+      "colecao": 4
     }
   ],
 
   "colecoes": [
     {
-      "id?": 1,
-      "colecao": "string",
-      "responsavel": "string",
-      "estacao": "string",
-      "modelo": 1 ,
+      "id": 1,
+      "colecao": "Coleção Primavera/Verão",
+      "responsavel": "Ana Silva",
+      "estacao": "Primavera/Verão",
+      "modelo": 2022 ,
+      "orcamento": 5000
+    },
+    {
+      "id": 2,
+      "colecao": "Coleção Outono/Inverno",
+      "responsavel": "Pedro Oliveira",
+      "estacao": "Outono/Inverno",
+      "modelo": 2022 ,
+      "orcamento": 6000
+    },
+    {
+      "id": 3,
+      "colecao": "Coleção Praia",
+      "responsavel": "Mariana Costa",
+      "estacao": "Verão",
+      "modelo": 2022 ,
+      "orcamento": 3000
+    },
+    {
+      "id": 4,
+      "colecao": "Coleção Esporte",
+      "responsavel": "Lucas Santos",
+      "estacao": "Primavera/Verão",
+      "modelo": 2022 ,
+      "orcamento": 4500
+    },
+    {
+      "id": 5,
+      "colecao": "Coleção Luxo",
+      "responsavel": "Isabel Oliveira",
+      "estacao": "Outono/Inverno",
+      "modelo": 2022 ,
+      "orcamento": 8000
+    },
+    {
+      "id": 6,
+      "colecao": "Coleção Streetwear",
+      "responsavel": "José Silva",
+      "estacao": "Primavera/Verão",
+      "modelo": 2022 ,
+      "orcamento": 3500
+    },
+    {
+      "id": 7,
+      "colecao": "Coleção Social",
+      "responsavel": "Amanda Almeida",
+      "estacao": "Outono/Inverno",
+      "modelo": 2022 ,
+      "orcamento": 7000
+    },
+    {
+      "id": 8,
+      "colecao": "Coleção Infantil",
+      "responsavel": "Fernanda Lima",
+      "estacao": "Primavera/Verão",
+      "modelo": 2022 ,
+      "orcamento": 2500
+    },
+    {
+      "id": 9,
+      "colecao": "Coleção Fitness",
+      "responsavel": "Luciana Santos",
+      "estacao": "Primavera/Verão",
+      "modelo": 2022 ,
       "orcamento": 4000
     },
     {
-      "id?": 2,
-      "colecao": "string",
-      "responsavel": "string",
-      "estacao": "string",
-      "modelo": 1 ,
-      "orcamento": 6000
+      "id": 10,
+      "colecao": "Coleção Grunge",
+      "responsavel": "Ricardo Castro",
+      "estacao": "Outono/Inverno",
+      "modelo": 2022 ,
+      "orcamento": 5500
     },
     {
-      "id?": 3,
-      "colecao": "string",
-      "responsavel": "string",
-      "estacao": "string",
-      "modelo": 1 ,
-      "orcamento": 6000
+      "id": 11,
+      "colecao": "Coleção Minimalista",
+      "responsavel": "Maria Souza",
+      "estacao": "Primavera/Verão",
+      "modelo": 2022 ,
+      "orcamento": 3000
     }
   ],
   "email": []

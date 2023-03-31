@@ -3,6 +3,6 @@ export interface Colecoes {
     colecao: string;
     responsavel: string;
     estacao: string;
-    modelo: string;
-    orcamento: string;
+    modelo: number;
+    orcamento: number;
 }

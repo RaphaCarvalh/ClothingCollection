@@ -16,7 +16,7 @@ export class DashComponent implements AfterViewInit {
   dataSource: DashDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['colecao', 'responsavel', 'estacao', 'modelos', 'orcamento'];
+  displayedColumns = ['id', 'name'];
 
   constructor() {
     this.dataSource = new DashDataSource();

@@ -16,6 +16,12 @@
       "nomedoproduto": "string",
       "responsavel": "string",
       "colecao": 3
+    },
+    {
+      "modeloid?":2,
+      "nomedoproduto": "string",
+      "responsavel": "string",
+      "colecao": 5
     }
   ],
 
@@ -25,8 +31,24 @@
       "colecao": "string",
       "responsavel": "string",
       "estacao": "string",
-      "modelo": "string",
-      "orcamento": "string"
+      "modelo": 1 ,
+      "orcamento": 4000
+    },
+    {
+      "id?": 2,
+      "colecao": "string",
+      "responsavel": "string",
+      "estacao": "string",
+      "modelo": 1 ,
+      "orcamento": 6000
+    },
+    {
+      "id?": 3,
+      "colecao": "string",
+      "responsavel": "string",
+      "estacao": "string",
+      "modelo": 1 ,
+      "orcamento": 6000
     }
   ],
   "email": []

@@ -44,6 +44,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { DashComponent } from './Components/dash/dash.component';
 import { CollectComponent } from './Components/collect/collect.component';
 import { ModelsComponent } from './Components/models/models.component';
+import { ModelosService } from './services/modelos.service';
+import { ColecoesService } from './services/colecoes.service';
 
 
 
@@ -110,7 +112,7 @@ import { ModelsComponent } from './Components/models/models.component';
     
 
   ],
-  providers: [AuthService,LoginService, CadastroService, AuthGuard],
+  providers: [AuthService,LoginService, CadastroService, AuthGuard, ModelosService, ColecoesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

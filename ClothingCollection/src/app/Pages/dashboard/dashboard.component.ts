@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { map, max } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Colecoes } from 'src/app/model/colecoes';
+import { ColecoesService } from 'src/app/services/colecoes.service';
+import { Router } from '@angular/router';
+import { ModelosService } from 'src/app/services/modelos.service';
+import { Modelos } from 'src/app/model/modelos';
+import { min } from 'rxjs-compat/operator/min';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -9,88 +15,104 @@ import { Colecoes } from 'src/app/model/colecoes';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  colecoes: Colecoes[] = [
-    { colecao: 'string', responsavel: 'string',estacao: 'string', modelo: 'string', orcamento: 'string'}
-  ];
-
-  displayedColumns = [ 'Colecao',
-    'Responsavel',
-    'Modelo',
-    'Orcamento']
-
-
+  
+  //Captura da data
+    formatsDateTest: string[] = [
+      'MM/yy'
+    ];
+  
+    dateNow: Date = new Date();
+    dateNowISO = this.dateNow.toISOString();
+  dateNowMilliseconds = this.dateNow.getTime();
 
 
+  //valores
 
-  constructor() {
-    // this.orcamentos = []
-   }
-  ngOnInit(): void {} 
+  randonone: number;
+  randontwo: number;
+
+
+  randonOne(): number {
+    const min = 1000;
+    const max = 9999;
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
+  randonTwo(): number {
+    const min = 1;
+    const max = 99;
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+ 
+  /////Construção das requisições
+    
+  colecoes: Colecoes[] = [];
+
+  modelos: Modelos[] = [];
   
 
 
+  constructor(private colecoesService: ColecoesService, private modelosService: ModelosService,
+    private router: Router) {
+    // this.orcamentos = []
+    this.getColecao();
+    this.getModelo();
+  }
+  
+  getColecao() {
+    this.colecoesService.getColecao().subscribe(data => {
+      if (!data) {
+        alert('erro')
+        return;
+      }
+      this.colecoes = data;
+    })
+  }
+  
+  getModelo() {
+    this.modelosService.getModelo().subscribe(data => {
+      if (!data) {
+        alert('erro')
+        return;
+      }
+      this.modelos = data;
+    })
+  }
 
 
+//testando requisição
+  
+// meuArrayJson: any[] = [
+//   { id: 1, nome: "Objeto 1" },
+//   { id: 2, nome: "Objeto 2" },
+//   { id: 3, nome: "Objeto 3" },
+  // ...
+// ];
+  
+  dadosColecoes: any[] = [];
+  dadosModelos: any[] = [];
+ 
+  numeroDeColecoes : number;
+  numeroDeModelos : number;
 
+  
+  ngOnInit(): void {
+    this.randonone = this.randonOne();
+    this.randontwo = this.randonTwo();
 
+    this.colecoesService.getColecao().subscribe(data => {
+      this.dadosColecoes = data;
+      this.numeroDeColecoes = this.colecoes.length;
+    });
 
+    this.modelosService.getModelo().subscribe(data => {
+      this.dadosModelos = data;
+      this.numeroDeModelos = this.modelos.length;
+    });
+  }
+}
+  
+ 
 
-
-
-
-  // /** Based on the screen size, switch from standard to one column per row */
-  // cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-  //   map(({ matches }) => {
-  //     if (matches) {
-  //       return [
-  //         { title: 'Card 1', cols: 1, rows: 1 },
-  //         { title: 'Card 2', cols: 1, rows: 1 },
-  //         { title: 'Card 3', cols: 1, rows: 1 },
-  //         { title: 'Card 4', cols: 1, rows: 1 }
-  //       ];
-  //     }
-
-  //     return [
-  //       { title: 'Card 1', cols: 2, rows: 1 },
-  //       { title: 'Card 2', cols: 1, rows: 1 },
-  //       { title: 'Card 3', cols: 1, rows: 2 },
-  //       { title: 'Card 4', cols: 1, rows: 1 }
-  //     ];
-  //   })
-  // );
-
-
-//   <table mat-table [dataSource]="colecoes" class="mat-elevation-z8">
-
-//   <!--- Note that these columns can be defined in any order.
-//         The actual rendered columns are set as a property on the row definition" -->
-
-//   <!-- Position Column -->
-//   <ng-container matColumnDef="Colecao">
-//     <th mat-header-cell *matHeaderCellDef> Coleção </th>
-//     <td mat-cell *matCellDef="let colecoes"> {{ colecoes.Colecao }} </td>
-//   </ng-container>
-
-//   <!-- Name Column -->
-//   <ng-container matColumnDef="Responsavel">
-//     <th mat-header-cell *matHeaderCellDef> Reponsável </th>
-//     <td mat-cell *matCellDef="let colecoes"> {{ colecoes.Responsavel }} </td>
-//   </ng-container>
-
-//   <!-- Weight Column -->
-//   <ng-container matColumnDef="Modelos">
-//     <th mat-header-cell *matHeaderCellDef> Modelos </th>
-//     <td mat-cell *matCellDef="let colecoes"> {{colecoes.Modelo}} </td>
-//   </ng-container>
-
-//   <!-- Symbol Column -->
-//   <ng-container matColumnDef="Orcamento">
-//     <th mat-header-cell *matHeaderCellDef> Orçamento </th>
-//     <td mat-cell *matCellDef="let colecoes"> {{colecoes.Orcamento}} </td>
-//   </ng-container>
-
-//   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-//   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-// </table>
+  

@@ -9,7 +9,7 @@
           <div class="card-one">
             <div class="card-body-one">
               <h5 class="card-title">Coleções</h5>
-              <h6 class="card-subtitle">{{25}}</h6>                      
+              <h6 class="card-subtitle">{{ numeroDeColecoes }}</h6>                      
             </div>
           </div>        
         </div>
@@ -17,7 +17,7 @@
           <div class="card-two">
             <div class="card-body-two">
               <h5 class="card-title">Modelos</h5>
-              <h6 class="card-subtitle">{{64}}</h6>                  
+              <h6 class="card-subtitle">{{numeroDeModelos}}</h6>                  
             </div>
         </div>   
         </div>
@@ -26,11 +26,12 @@
             <div class="card-body-three">
               <div id="one">
               <h5 class="card-title">Orçamento Médio (R$)</h5>
-              <h6 class="card-subtitle-sub-one">{{4700}}</h6>
+              <h6 class="card-subtitle-sub-one">{{ randonone }}</h6>
               </div>
               <div id="two">
-              <h6 class="card-subtitle-sub-two"><i class="fa-sharp fa-solid fa-arrow-up fa-bounce fa-2xs" style="color: #37ff00;"></i>{{"25%"}}</h6>       
-              <h6 class="card-subtitle-sub-three">{{'Comparado com 01/23'}}</h6>    
+              <h6 class="card-subtitle-sub-two"><i class="fa-sharp fa-solid fa-arrow-up fa-bounce fa-2xs" style="color: #37ff00;"></i>{{ randontwo }}%</h6>       
+              <h6 class="card-subtitle-sub-three" *ngFor="let format of formatsDateTest">Comparado com {{ dateNow | date: format }}</h6>   
+
             </div>                     
           </div>            
        </div>   

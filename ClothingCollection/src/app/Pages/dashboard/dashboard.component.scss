@@ -1,9 +1,13 @@
+*{
+  // background-color: #B4B6C1;
+}
 .cards{
   position: relative;
   width: 100%;
   height: 862px;
   align-items: flex-start;
   margin-left: 100px;
+  
 
 }
 .cardglobal{
@@ -11,6 +15,7 @@
   flex-direction: row;
   margin-top: 30px;
   padding-left: 30px; 
+  
 }
 
 .titulo{
@@ -52,6 +57,9 @@
 
   background: #FFFFFF;
   border-radius: 20px;
+  box-shadow: 10px 5px 5px rgb(141, 140, 140);
+
+
 }
 .card-title{
   font-family: 'Inter';
@@ -96,6 +104,8 @@
 
   background: #FFFFFF;
   border-radius: 20px;
+  box-shadow: 10px 5px 5px rgb(141, 140, 140);
+
 
 }
 
@@ -117,6 +127,8 @@
 
   background: #FFFFFF;
   border-radius: 20px; 
+  box-shadow: 10px 5px 5px rgb(141, 140, 140);
+
 
 }
 
@@ -169,6 +181,7 @@
   line-height: 19px;
   text-align: right;
   
+  
 }
 
 .card-subtitle-sub-three{
@@ -182,6 +195,8 @@
   color: #B4B6C1;
   flex-wrap: nowrap;
   border-radius: 20px;
+  padding-top: 15px;
+  
 
 }
 
@@ -205,17 +220,10 @@
 
   background: #FFFFFF;
   border-radius: 9px;
+  box-shadow: 10px 5px 5px rgb(141, 140, 140);
+
 
   
-}
-
-.card-four{
-
-}
-
-.card-body-four{
-
-
 }
 
 .card-title-four{

@@ -1,1 +1,44 @@
-<p>criar-modelo works!</p>
+<app-menu-topo>
+  
+    <div class="Cards">
+      <mat-toolbar class="titulo">
+            <span>Modelos</span>
+              <div class="button">
+              <a href='' routerLink="../criar-modelo">
+              <button type="button" class="btn btn-primary">
+                Criar Modelo
+              </button></a>
+          </div>
+          
+      </mat-toolbar>   
+    </div>  
+    <a routerLink="../criar-modelo"> 
+      <div class="card-one-four">
+        <div class="card-four">          
+            <h5 class="card-title-four">Maiores Orçamentos</h5>
+          </div>  
+            <div class="card-body-four">
+                    <table class="table">
+                      <thead class="thead-light text-center">
+                        <tr>
+                          <th class="w-40">ModeloID</th>
+                          <th class="w-40">Nome do Modelo</th>
+                          <th class="w-40">Responsável</th>
+                          <th class="w-40">Coleção</th>
+                        </tr>
+                      </thead>
+            
+                      <tbody>                        
+                        <tr *ngFor="let modelos of modelos">
+                          <td >{{ modelos.modeloid }}</td>
+                          <td>{{ modelos.nomedoproduto }}</td>
+                          <td>{{ modelos.responsavel }}</td>
+                          <td>{{ modelos.colecao }}</td>                                           
+                       
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+        </div>
+    </a>
+  </app-menu-topo>

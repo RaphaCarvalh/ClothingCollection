@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
 import { ModelosService } from 'src/app/services/modelos.service';
 import { Modelos } from 'src/app/model/modelos';
 import { min } from 'rxjs-compat/operator/min';
+import { DataSource } from '@angular/cdk/collections';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { Observable, of as observableOf, merge } from 'rxjs';
 
 
 @Component({
@@ -30,6 +34,7 @@ export class DashboardComponent implements OnInit {
 
   randonone: number;
   randontwo: number;
+  sort: any;
 
 
   randonOne(): number {
@@ -101,9 +106,25 @@ export class DashboardComponent implements OnInit {
       this.dadosModelos = data;
       this.numeroDeModelos = this.modelos.length;
     });
+  
+   
+  }
 
-   
-   
+
+
+  private getSortedData(data: Colecoes[]): Colecoes[] {
+    if (!this.sort || !this.sort.active || this.sort.direction === '') {
+      return data;
+    }
+
+    return data.sort((a, b) => {
+      const isAsc = this.sort?.direction === 'asc';
+      switch (this.sort?.active) {
+        case 'orcamentos': return compare(a.orcamento, b.orcamento, isAsc);
+        case 'id': return compare(+a.id, +b.id, isAsc);
+        default: return 0;
+      }
+    });
   }
 }
 
@@ -112,4 +133,8 @@ export class DashboardComponent implements OnInit {
   
  
 
+
+function compare(arg0: number, arg1: number, isAsc: boolean): number {
+  throw new Error('Function not implemented.');
+}
   

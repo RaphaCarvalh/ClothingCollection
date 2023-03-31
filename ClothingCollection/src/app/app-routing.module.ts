@@ -17,7 +17,7 @@ import { EditarModeloComponent } from './Pages/editar-modelo/editar-modelo.compo
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: '', component: LoginComponent },
+  { path: '', component: CriarModeloComponent },
   { path: 'redefinirSenha', component: RedefinirSenhaComponent },
   { path: 'senhaRedefinida', component: SenhaRedefinidaComponent },
   { path: 'cadastro', component: CadastroComponent },

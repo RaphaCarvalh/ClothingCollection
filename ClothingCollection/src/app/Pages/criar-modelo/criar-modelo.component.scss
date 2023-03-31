@@ -1,0 +1,79 @@
+  
+  .titulo{
+    width: 100%;
+    height: auto;
+    padding-left: 50px;
+    padding-top: 30px;
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height */ 
+     
+    color: #2C2C2C;
+    background-color:#f9f9f9;
+  
+  
+  }
+  
+  .button{
+    margin-left: 1135px;
+    
+  }
+
+  a{
+    text-decoration: none;
+  }
+ 
+  .card-one-four{
+    margin-left: 50px;
+    margin-top: 35px;
+  
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  
+    width: 1400px;
+    height: 498px;
+  
+    background: #FFFFFF;
+    border-radius: 9px;
+    box-shadow: 10px 5px 5px rgb(141, 140, 140);
+  
+  
+    
+  }
+  
+  .card-title-four{
+    padding: 30px 0px 0px 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+   
+    color: #595959;
+  
+    width: 300px;
+  
+  }
+  
+  .table{
+    width: 1200px;
+    height: 398px;
+    text-align: center;
+    margin-bottom: 20px;
+  
+  }
+  
+  th tr{
+    text-align: center;
+  }
+  
+  .card-body-four{
+    padding-left: 80px;
+  
+  
+  }

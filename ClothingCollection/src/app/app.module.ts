@@ -45,6 +45,7 @@ import { CriarColecaoComponent } from './Pages/criar-colecao/criar-colecao.compo
 import { EditarColecaoComponent } from './Pages/editar-colecao/editar-colecao.component';
 import { EditarModeloComponent } from './Pages/editar-modelo/editar-modelo.component';
 import { CriarModeloComponent } from './Pages/criar-modelo/criar-modelo.component';
+import { TestComponent } from './Components/test/test.component';
 
 
 
@@ -66,6 +67,7 @@ import { CriarModeloComponent } from './Pages/criar-modelo/criar-modelo.componen
     EditarColecaoComponent,
     EditarModeloComponent,
     CriarModeloComponent,
+    TestComponent,
     
   ],
 

@@ -21,8 +21,6 @@ import { AuthGuard } from './Guard/auth.guard';
 import { ColecoesComponent } from './Pages/colecoes/colecoes.component';
 import { ModelosComponent } from './Pages/modelos/modelos.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { TotalColecaoComponent } from './cards/total-colecao/total-colecao.component';
-import { MediaPOrcolecaoComponent } from './cards/media-porcolecao/media-porcolecao.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -41,8 +39,6 @@ import { BsDropdownModule, BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { CollectComponent } from './Components/collect/collect.component';
-import { ModelsComponent } from './Components/models/models.component';
 import { ModelosService } from './services/modelos.service';
 import { ColecoesService } from './services/colecoes.service';
 import { CriarColecaoComponent } from './Pages/criar-colecao/criar-colecao.component';
@@ -65,11 +61,7 @@ import { CriarModeloComponent } from './Pages/criar-modelo/criar-modelo.componen
     SenhaRedefinidaComponent,
     ColecoesComponent,
     ModelosComponent,
-    TotalColecaoComponent,
-    MediaPOrcolecaoComponent,
     MenuTopoComponent,
-    CollectComponent,
-    ModelsComponent,
     CriarColecaoComponent,
     EditarColecaoComponent,
     EditarModeloComponent,

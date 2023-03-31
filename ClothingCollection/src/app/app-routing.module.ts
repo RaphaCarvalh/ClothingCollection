@@ -8,7 +8,6 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { AuthGuard } from './Guard/auth.guard';
 import { ColecoesComponent } from './Pages/colecoes/colecoes.component';
 import { ModelosComponent } from './Pages/modelos/modelos.component';
-import { CollectComponent } from './Components/collect/collect.component';
 import { CriarColecaoComponent } from './Pages/criar-colecao/criar-colecao.component';
 import { EditarColecaoComponent } from './Pages/editar-colecao/editar-colecao.component';
 import { CriarModeloComponent } from './Pages/criar-modelo/criar-modelo.component';

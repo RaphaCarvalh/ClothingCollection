@@ -41,11 +41,14 @@ import { BsDropdownModule, BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { DashComponent } from './Components/dash/dash.component';
 import { CollectComponent } from './Components/collect/collect.component';
 import { ModelsComponent } from './Components/models/models.component';
 import { ModelosService } from './services/modelos.service';
 import { ColecoesService } from './services/colecoes.service';
+import { CriarColecaoComponent } from './Pages/criar-colecao/criar-colecao.component';
+import { EditarColecaoComponent } from './Pages/editar-colecao/editar-colecao.component';
+import { EditarModeloComponent } from './Pages/editar-modelo/editar-modelo.component';
+import { CriarModeloComponent } from './Pages/criar-modelo/criar-modelo.component';
 
 
 
@@ -65,9 +68,12 @@ import { ColecoesService } from './services/colecoes.service';
     TotalColecaoComponent,
     MediaPOrcolecaoComponent,
     MenuTopoComponent,
-    DashComponent,
     CollectComponent,
     ModelsComponent,
+    CriarColecaoComponent,
+    EditarColecaoComponent,
+    EditarModeloComponent,
+    CriarModeloComponent,
     
   ],
 

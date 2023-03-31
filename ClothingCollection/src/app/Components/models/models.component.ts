@@ -16,7 +16,7 @@ export class ModelsComponent implements AfterViewInit {
   dataSource: ModelsDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['modeloid', 'nomedoproduto','responsavel','colecao'];
 
   constructor() {
     this.dataSource = new ModelsDataSource();

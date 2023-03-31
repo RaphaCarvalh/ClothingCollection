@@ -1,67 +1,105 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { Colecoes } from 'src/app/model/colecoes';
+import { Modelos } from 'src/app/model/modelos';
+import { ColecoesService } from 'src/app/services/colecoes.service';
+import { ModelosService } from 'src/app/services/modelos.service';
 
 @Component({
   selector: 'app-colecoes',
   templateUrl: './colecoes.component.html',
   styleUrls: ['./colecoes.component.scss']
 })
-export class ColecoesComponent implements OnInit{
+export class ColecoesComponent implements OnInit {
+  
+  //Captura da data
+    formatsDateTest: string[] = [
+      'MM/yy'
+    ];
+  
+    dateNow: Date = new Date();
+    dateNowISO = this.dateNow.toISOString();
+  dateNowMilliseconds = this.dateNow.getTime();
 
-  colecoes: any[] = [];
-  displayedColumns = [ 'Colecao',
-    'Responsavel',
-    'Estacao',
-    'Modelo',
-    'Orcamento']
+
+  //valores
+
+  randonone: number;
+  randontwo: number;
 
 
-
-
-  constructor() {
-    // this.orcamentos = []
-   }
-  ngOnInit(): void {}
+  randonOne(): number {
+    const min = 1000;
+    const max = 9999;
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
+  randonTwo(): number {
+    const min = 1;
+    const max = 99;
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+ 
+  /////Construção das requisições
+    
+  colecoes: Colecoes[] = [];
+  modelos: Modelos[] = [];
+  colect: any;
   
 
 
-//   <table mat-table [dataSource]="colecoes" class="mat-elevation-z8">
+  constructor(private colecoesService: ColecoesService, private modelosService: ModelosService,
+    private router: Router) {
+    this.getColecao();
+    this.getModelo();    
+  }
+  
+  getColecao() {
+    this.colecoesService.getColecao().subscribe(data => {
+      if (!data) {
+        alert('erro')
+        return;
+      }
+      this.colecoes = data;
+    })
+  }
+  
+  getModelo() {
+    this.modelosService.getModelo().subscribe(data => {
+      if (!data) {
+        alert('erro')
+        return;
+      }
+      this.modelos = data;
+    })
+  }
+ 
+  dadosColecoes: any[] = [];
+  dadosModelos: any[] = [];
+ 
+  numeroDeColecoes : number;
+  numeroDeModelos: number;
+  colecao: any;
+  mediaOrcamentos: number;
 
-//   <!--- Note that these columns can be defined in any order.
-//         The actual rendered columns are set as a property on the row definition" -->
+  
+  ngOnInit(): void {
+    this.randonone = this.randonOne();
+    this.randontwo = this.randonTwo();
 
-//   <!-- Colecao Column -->
-//   <ng-container matColumnDef="Colecao">
-//     <th mat-header-cell *matHeaderCellDef> Coleção </th>
-//     <td mat-cell *matCellDef="let colecoes"> {{colecoes.position}} </td>
-//   </ng-container>
+    this.colecoesService.getColecao().subscribe(data => {
+      this.dadosColecoes = data;
+      this.numeroDeColecoes = this.colecoes.length;
+    });
 
-//   <!-- Responsavel Column -->
-//   <ng-container matColumnDef="Responsavel">
-//     <th mat-header-cell *matHeaderCellDef> Responsável </th>
-//     <td mat-cell *matCellDef="let colecoes"> {{colecoes.Responsavel}} </td>
-//   </ng-container>
+    this.modelosService.getModelo().subscribe(data => {
+      this.dadosModelos = data;
+      this.numeroDeModelos = this.modelos.length;
+    });
 
-//   <!-- Estacao Column -->
-//   <ng-container matColumnDef="Estacao">
-//     <th mat-header-cell *matHeaderCellDef> Estação </th>
-//     <td mat-cell *matCellDef="let colecoes"> {{colecoes.Estacao}} </td>
-//   </ng-container>
-
-//   <!-- Modelo Column -->
-//   <ng-container matColumnDef="Modelo">
-//     <th mat-header-cell *matHeaderCellDef> Modelo </th>
-//     <td mat-cell *matCellDef="let colecoes"> {{colecoes.Modelo}} </td>
-//   </ng-container>
-
-//  <!-- Orcamento Column -->
-//  <ng-container matColumnDef="Orcamento">
-//   <th mat-header-cell *matHeaderCellDef> Orçamento </th>
-//   <td mat-cell *matCellDef="let colecoes"> {{colecoes.Orcamento}} </td>
-// </ng-container>
-
-//   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-//   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-// </table>
-
+   
+   
+  }
+}

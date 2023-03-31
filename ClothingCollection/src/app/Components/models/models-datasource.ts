@@ -6,32 +6,26 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface ModelsItem {
-  name: string;
-  id: number;
+  nomedoproduto: string; 
+  responsavel: string;
+  colecao: number;  
+  modeloid: number;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: ModelsItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+ 
+  { modeloid: 1, nomedoproduto: 'Camiseta Básica', responsavel: 'Pedro Oliveira', colecao: 3},
+  { modeloid: 2, nomedoproduto: 'lusa de Frio', responsavel: 'Mariana Costa', colecao: 2},
+  { modeloid: 3, nomedoproduto: 'Calça Jeans', responsavel: 'Pedro Oliveira', colecao: 1},
+  { modeloid: 4, nomedoproduto: 'lusa de Frio', responsavel: 'Pedro Oliveira', colecao:3 },
+  { modeloid: 5, nomedoproduto: 'Calça Jeans', responsavel: 'Mariana Costa', colecao: 6},
+  { modeloid: 6, nomedoproduto: 'Camiseta Básica', responsavel: 'Pedro Oliveira', colecao: 8},
+  { modeloid: 7, nomedoproduto: 'lusa de Frio', responsavel: 'PMariana Costa', colecao: 7},
+  { modeloid: 8, nomedoproduto: 'Camiseta Básica', responsavel: 'Pedro Oliveira', colecao: 9},
+  { modeloid: 9, nomedoproduto: 'Calça Jeans', responsavel: 'Mariana Costa', colecao: 1},
+  { modeloid: 10, nomedoproduto: 'Camiseta Básica', responsavel: 'Pedro Oliveira', colecao: 5} 
+
 ];
 
 /**
@@ -97,8 +91,8 @@ export class ModelsDataSource extends DataSource<ModelsItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'name': return compare(a.modeloid, b.modeloid, isAsc);
+        case 'id': return compare(+a.colecao, +b.colecao, isAsc);
         default: return 0;
       }
     });

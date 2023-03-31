@@ -43,9 +43,28 @@
         <div class="card-four">          
             <h5 class="card-title-four">Maiores Orçamentos</h5>
           </div>  
-            <div class="card-body-four"><app-dash></app-dash>
-          </div>         
-       
-    </div>
-  </div>
+            <div class="card-body-four">
+                    <table class="table">
+                      <thead class="thead-light text-center">
+                        <tr>
+                          <th class="w-40">ID</th>
+                          <th class="w-40">Coleção</th>
+                          <th class="w-40">Orçamento</th>
+                          <th class="w-40">Responsável</th>
+                        </tr>
+                      </thead>
+            
+                      <tbody>                        
+                        <tr *ngFor="let colecoes of colecoes">
+                          <td >{{colecoes.id}}</td>
+                          <td>{{colecoes.colecao}}</td>
+                          <td>{{colecoes.orcamento}}</td>
+                          <td>{{colecoes.responsavel}}</td>                          
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+        </div>
+      </div>         
+ 
 </app-menu-topo>

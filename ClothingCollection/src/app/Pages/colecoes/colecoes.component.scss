@@ -1,36 +1,82 @@
-// body {
-//     overflow-x: hidden;
-//   }
-//   #sidebar-wrapper {
-//     min-height: 100vh;
-//     margin-left: -15rem;
-//     -webkit-transition: margin .25s ease-out;
-//     -moz-transition: margin .25s ease-out;
-//     -o-transition: margin .25s ease-out;
-//     transition: margin .25s ease-out;
-//   }
-//   #sidebar-wrapper .sidebar-heading {
-//     padding: 0.875rem 1.25rem;
-//     font-size: 1.2rem;
-//   }
-//   #sidebar-wrapper .list-group {
-//     width: 15rem;
-//   }
-//   #page-content-wrapper {
-//     min-width: 100vw;
-//   }
-//   #wrapper.toggled #sidebar-wrapper {
-//     margin-left: 0;
-//   }
-//   @media (min-width: 768px) {
-//     #sidebar-wrapper {
-//       margin-left: 0;
-//     }
-//     #page-content-wrapper {
-//       min-width: 0;
-//       width: 100%;
-//     }
-//     #wrapper.toggled #sidebar-wrapper {
-//       margin-left: -15rem;
-//     }
-//   }
+*{
+    // background-color: #B4B6C1;
+  }
+  
+  .titulo{
+    width: 100%;
+    height: auto;
+    padding-left: 50px;
+    padding-top: 30px;
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height */ 
+     
+    color: #2C2C2C;
+    background-color:#f9f9f9;
+  
+  
+  }
+  
+  .button{
+    margin-left: 1135px;
+    
+  }
+
+  a{
+    text-decoration: none;
+  }
+ 
+  .card-one-four{
+    margin-left: 50px;
+    margin-top: 35px;
+  
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  
+    width: 1400px;
+    height: 498px;
+  
+    background: #FFFFFF;
+    border-radius: 9px;
+    box-shadow: 10px 5px 5px rgb(141, 140, 140);
+  
+  
+    
+  }
+  
+  .card-title-four{
+    padding: 30px 0px 0px 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+   
+    color: #595959;
+  
+    width: 300px;
+  
+  }
+  
+  .table{
+    width: 1200px;
+    height: 398px;
+    text-align: center;
+    margin-bottom: 20px;
+  
+  }
+  
+  th tr{
+    text-align: center;
+  }
+  
+  .card-body-four{
+    padding-left: 80px;
+  
+  
+  }

@@ -1,36 +1,44 @@
 <app-menu-topo>
-    <table mat-table [dataSource]="modelos" class="mat-elevation-z8">
   
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-    
-      <!-- Modeloid Column -->
-      <ng-container matColumnDef="Modeloid">
-        <th mat-header-cell *matHeaderCellDef> ModeloID </th>
-        <td mat-cell *matCellDef="let modelos"> {{modelos.Modeloid}} </td>
-      </ng-container>
-    
-      <!-- Nomedoproduto Column -->
-      <ng-container matColumnDef="Nomedoproduto">
-        <th mat-header-cell *matHeaderCellDef> Nome do modelo </th>
-        <td mat-cell *matCellDef="let modelos"> {{modelos.Nomedoproduto}} </td>
-      </ng-container>
-    
-      <!-- Responsavel Column -->
-      <ng-container matColumnDef="Responsavel">
-        <th mat-header-cell *matHeaderCellDef> Responsável </th>
-        <td mat-cell *matCellDef="let modelos"> {{modelos.Responsavel}} </td>
-      </ng-container>
-    
-      <!-- Colecao Column -->
-      <ng-container matColumnDef="Colecao">
-        <th mat-header-cell *matHeaderCellDef> Coleção </th>
-        <td mat-cell *matCellDef="let modelos"> {{modelos.Colecao}} </td>
-      </ng-container>
-    
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-    
-     
-  </app-menu-topo>
+  <div class="Cards">
+    <mat-toolbar class="titulo">
+          <span>Modelos</span>
+            <div class="button">
+            <a href='' routerLink="../criar-modelo">
+            <button type="button" class="btn btn-primary">
+              Criar Modelo
+            </button></a>
+        </div>
+        
+    </mat-toolbar>   
+  </div>  
+  <a routerLink="../criar-modelo"> 
+    <div class="card-one-four">
+      <div class="card-four">          
+          <h5 class="card-title-four">Maiores Orçamentos</h5>
+        </div>  
+          <div class="card-body-four">
+                  <table class="table">
+                    <thead class="thead-light text-center">
+                      <tr>
+                        <th class="w-40">ModeloID</th>
+                        <th class="w-40">Nome do Modelo</th>
+                        <th class="w-40">Responsável</th>
+                        <th class="w-40">Coleção</th>
+                      </tr>
+                    </thead>
+          
+                    <tbody>                        
+                      <tr *ngFor="let modelos of modelos">
+                        <td >{{ modelos.modeloid }}</td>
+                        <td>{{ modelos.nomedoproduto }}</td>
+                        <td>{{ modelos.responsavel }}</td>
+                        <td>{{ modelos.colecao }}</td>                                           
+                     
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+      </div>
+  </a>
+</app-menu-topo>

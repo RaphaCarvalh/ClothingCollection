@@ -35,6 +35,15 @@
       "password": "qrstuvwx",
       "repassword": "qrstuvwx",
       "id": 7
+    },
+    {
+      "nome": "devone.r8@gmail.com",
+      "empresa": "devone.r8@gmail.com",
+      "cnpj": "34234324243422",
+      "email": "usuario@email.com",
+      "password": "12345678",
+      "repassword": "12345678",
+      "id": 8
     }
   ],
   "modelos": [
@@ -69,14 +78,13 @@
       "colecao": 4
     }
   ],
-
   "colecoes": [
     {
       "id": 1,
       "colecao": "Coleção Primavera/Verão",
       "responsavel": "Ana Silva",
       "estacao": "Primavera/Verão",
-      "modelo": 2022 ,
+      "modelo": 2022,
       "orcamento": 5000
     },
     {
@@ -84,7 +92,7 @@
       "colecao": "Coleção Outono/Inverno",
       "responsavel": "Pedro Oliveira",
       "estacao": "Outono/Inverno",
-      "modelo": 2022 ,
+      "modelo": 2022,
       "orcamento": 6000
     },
     {
@@ -92,7 +100,7 @@
       "colecao": "Coleção Praia",
       "responsavel": "Mariana Costa",
       "estacao": "Verão",
-      "modelo": 2022 ,
+      "modelo": 2022,
       "orcamento": 3000
     },
     {
@@ -100,7 +108,7 @@
       "colecao": "Coleção Esporte",
       "responsavel": "Lucas Santos",
       "estacao": "Primavera/Verão",
-      "modelo": 2022 ,
+      "modelo": 2022,
       "orcamento": 4500
     },
     {
@@ -108,7 +116,7 @@
       "colecao": "Coleção Luxo",
       "responsavel": "Isabel Oliveira",
       "estacao": "Outono/Inverno",
-      "modelo": 2022 ,
+      "modelo": 2022,
       "orcamento": 8000
     },
     {
@@ -116,7 +124,7 @@
       "colecao": "Coleção Streetwear",
       "responsavel": "José Silva",
       "estacao": "Primavera/Verão",
-      "modelo": 2022 ,
+      "modelo": 2022,
       "orcamento": 3500
     },
     {
@@ -124,40 +132,8 @@
       "colecao": "Coleção Social",
       "responsavel": "Amanda Almeida",
       "estacao": "Outono/Inverno",
-      "modelo": 2022 ,
+      "modelo": 2022,
       "orcamento": 7000
-    },
-    {
-      "id": 8,
-      "colecao": "Coleção Infantil",
-      "responsavel": "Fernanda Lima",
-      "estacao": "Primavera/Verão",
-      "modelo": 2022 ,
-      "orcamento": 2500
-    },
-    {
-      "id": 9,
-      "colecao": "Coleção Fitness",
-      "responsavel": "Luciana Santos",
-      "estacao": "Primavera/Verão",
-      "modelo": 2022 ,
-      "orcamento": 4000
-    },
-    {
-      "id": 10,
-      "colecao": "Coleção Grunge",
-      "responsavel": "Ricardo Castro",
-      "estacao": "Outono/Inverno",
-      "modelo": 2022 ,
-      "orcamento": 5500
-    },
-    {
-      "id": 11,
-      "colecao": "Coleção Minimalista",
-      "responsavel": "Maria Souza",
-      "estacao": "Primavera/Verão",
-      "modelo": 2022 ,
-      "orcamento": 3000
     }
   ],
   "email": []

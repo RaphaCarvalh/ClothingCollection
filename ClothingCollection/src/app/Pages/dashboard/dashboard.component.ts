@@ -48,16 +48,15 @@ export class DashboardComponent implements OnInit {
   /////Construção das requisições
     
   colecoes: Colecoes[] = [];
-
   modelos: Modelos[] = [];
+  colect: any;
   
 
 
   constructor(private colecoesService: ColecoesService, private modelosService: ModelosService,
     private router: Router) {
-    // this.orcamentos = []
     this.getColecao();
-    this.getModelo();
+    this.getModelo();    
   }
   
   getColecao() {
@@ -79,22 +78,14 @@ export class DashboardComponent implements OnInit {
       this.modelos = data;
     })
   }
-
-
-//testando requisição
-  
-// meuArrayJson: any[] = [
-//   { id: 1, nome: "Objeto 1" },
-//   { id: 2, nome: "Objeto 2" },
-//   { id: 3, nome: "Objeto 3" },
-  // ...
-// ];
-  
+ 
   dadosColecoes: any[] = [];
   dadosModelos: any[] = [];
  
   numeroDeColecoes : number;
-  numeroDeModelos : number;
+  numeroDeModelos: number;
+  colecao: any;
+  mediaOrcamentos: number;
 
   
   ngOnInit(): void {
@@ -110,8 +101,14 @@ export class DashboardComponent implements OnInit {
       this.dadosModelos = data;
       this.numeroDeModelos = this.modelos.length;
     });
+
+   
+   
   }
 }
+
+
+
   
  
 

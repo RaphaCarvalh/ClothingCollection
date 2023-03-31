@@ -16,7 +16,7 @@ export class CollectComponent implements AfterViewInit {
   dataSource: CollectDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['colecao', 'responsavel','estacao','modelo', 'orcamento'];
 
   constructor() {
     this.dataSource = new CollectDataSource();

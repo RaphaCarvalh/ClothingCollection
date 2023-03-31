@@ -1,4 +1,45 @@
 <app-menu-topo>
- 
-
+  
+    <div class="Cards">
+      <mat-toolbar class="titulo">
+            <span>Coleções</span>
+              <div class="button">
+              <a href='' routerLink="../criar-colecao">
+              <button type="button" class="btn btn-primary">
+                Criar Coleção
+              </button></a>
+          </div>
+      </mat-toolbar>   
+    </div> 
+    <a routerLink="../editar-colecao"> 
+      <div class="card-one-four">
+        <div class="card-four">          
+            <h5 class="card-title-four">Maiores Orçamentos</h5>
+          </div>  
+            <div class="card-body-four">
+                    <table class="table">
+                      <thead class="thead-light text-center">
+                        <tr>
+                          <th class="w-40">Coleção</th>
+                          <th class="w-40">Responsável</th>
+                          <th class="w-40">Estação - Lançamento</th>
+                          <th class="w-40">Modelos</th>
+                          <th class="w-40">Orçamento</th>
+                        </tr>
+                      </thead>
+            
+                      <tbody>                        
+                        <tr *ngFor="let colecoes of colecoes">
+                          <td >{{ colecoes.id }}</td>
+                          <td>{{ colecoes.responsavel }}</td>
+                          <td>{{ colecoes.estacao }}</td>
+                          <td>{{ colecoes.modelo }}</td>   
+                          <td>{{ colecoes.orcamento }}</td>                          
+                       
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+        </div>
+    </a>
 </app-menu-topo>

@@ -1,15 +1,27 @@
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" matSort aria-label="Elements">
     <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    <ng-container matColumnDef="Modeloid">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ModeloID</th>
+      <td mat-cell *matCellDef="let row">{{row.modeloid}}</td>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    <ng-container matColumnDef="nomedoproduto">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome do produto</th>
+      <td mat-cell *matCellDef="let row">{{row.nomedoproduto}}</td>
+    </ng-container>
+
+     <!-- Id Column -->
+     <ng-container matColumnDef="responsavel">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Responsável</th>
+      <td mat-cell *matCellDef="let row">{{row.responsavel}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="colecao">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Coleção</th>
+      <td mat-cell *matCellDef="let row">{{row.colecao}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

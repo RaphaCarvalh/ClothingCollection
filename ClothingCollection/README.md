@@ -56,41 +56,41 @@ bash Copy code ng serve Acesse a aplicação em seu navegador no endereço http:
 
 <h3>Ahhh... Não esqueça de partir o Json, afinal nossos dados vem de lá! Por enquanto😎	</h3>
 
-6. Acesse a aplicação em seu navegador no endereço http://localhost:4200
-
 1. Garanta estar na pasta raiz do projeto.
 
 2. No terminal use o comando  json-server --watch db.json
 
-3. Voce deverá ver esse item \{^_^}/ hi!
+3. Voce deverá ver esse item   \ {^_^} / hi!
 
 4. Para checar as rotas fora da aplicação utilize as toras passadas logo a seguir da apresentação
 
 5.  Resources
-      http://localhost:3000/user
-      http://localhost:3000/modelos
-      http://localhost:3000/colecoes
-      http://localhost:3000/email
+      http://localhost:3000/user<br>
+      http://localhost:3000/modelos<br>
+      http://localhost:3000/colecoes<br>
+      http://localhost:3000/email<br>
 
     Home
       http://localhost:3000
 
-6. Welcome!  \{^_^}/ 
+6. Welcome!  \ {^_^} /
 
 
 📷 Demonstração A seguir, algumas demonstrações das páginas do projeto ClothingCollection:
 <div align="center">
-  Controle tudo de um só lugar, monitore e acesse as principais funionalidades do sistema, com tabelas interativas tenha tudo sempre a mão!
-  <img src="../ClothingCollection/src/assets/readme/controle.png" alt="Último commit">
+  Controle tudo de um só lugar, monitore e acesse as principais funionalidades do sistema, com tabelas interativas tenha tudo sempre a mão!<br>
+  <img src="../ClothingCollection/src/assets/readme/controle.png"height="42" width="42" alt="Último commit">
 </div>
+<br>
 <div align="center">
   Controle multinivel de usuarios e rotas de acesso, 
-tenha a máxima segurança na manipulação de suas informações.
-  <img src="../ClothingCollection/src/assets/readme/login.png" alt="Linguagem mais utilizada">
-    <img src="../ClothingCollection/src/assets/readme/cadastro.png" alt="Linguagem mais utilizada">
+tenha a máxima segurança na manipulação de suas informações.<br>
+  <img src="../ClothingCollection/src/assets/readme/login.png"height="42" width="42" alt="Linguagem mais utilizada">
+    <img src="../ClothingCollection/src/assets/readme/cadastro.png"height="42" width="42" alt="Linguagem mais utilizada">
 </div>
+<br>
 <div align="center">
-  Tenha total controle da sua coleção e faça o que quiser cm ela.
-  <img src="../ClothingCollection/src/assets/readme/edicao.png" alt="ClothingCollection Logo">
-    <img src="../ClothingCollection/src/assets/readme/cadastroitem.png" alt="ClothingCollection Logo">
+  Tenha total controle da sua coleção e faça o que quiser com ela.<br>
+  <img src="../ClothingCollection/src/assets/readme/edicao.png" height="42" width="42" alt="ClothingCollection Logo">
+    <img src="../ClothingCollection/src/assets/readme/cadastroitem.png" height="42" width="42" alt="ClothingCollection Logo">
 </div>

@@ -76,7 +76,7 @@ bash Copy code ng serve Acesse a aplicação em seu navegador no endereço http:
 12. Welcome!  \ {^_^} /
 
 
-📷<h3> Demonstração A seguir, algumas demonstrações das páginas do projeto ClothingCollection:</h3>
+<h3>📷A seguir, algumas demonstrações das páginas do projeto ClothingCollection:</h3>
 <div align="left">
   <h4>Controle tudo de um só lugar, monitore e acesse as principais funionalidades do sistema, com tabelas interativas tenha tudo sempre a mão!</h4><br>
   <img src="../ClothingCollection/src/assets/readme/controle.png"height="400" width="720" alt="Último commit">

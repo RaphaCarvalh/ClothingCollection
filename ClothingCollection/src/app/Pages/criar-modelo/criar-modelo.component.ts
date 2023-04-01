@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Colecoes } from 'src/app/model/colecoes';
 import { Modelos } from 'src/app/model/modelos';
@@ -59,17 +59,8 @@ export class CriarModeloComponent implements OnInit {
     private router: Router, private fb: FormBuilder) {      
         this.f = this.fb.group({
       
-          // nome: ['', [Validators.required, Validators.minLength(3)]],
-      
-          // empresa: ['', [Validators.required, Validators.minLength(2)]],
-      
-          // cnpj: ['', [Validators.required, Validators.minLength(14), Validators.maxLength(18), Validators.pattern("^[0-9]*$")]],
-          
-          // email: ['', [Validators.required, Validators.email, ]],
-      
-          // password: ['', [Validators.required, , Validators.minLength(8), Validators.maxLength(8)]],
-      
-          // repassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
+          nome: ['', [Validators.required, Validators.minLength(3)]],     
+         
         })
     this.getColecao();
     this.getModelo();    
@@ -105,7 +96,7 @@ export class CriarModeloComponent implements OnInit {
       });
       alert('Cadastro successful')
       this.f.reset();
-      this.getModelo()
+      this.getColecao()
     }
   }
  
@@ -130,10 +121,15 @@ export class CriarModeloComponent implements OnInit {
     this.modelosService.getModelo().subscribe(data => {
       this.dadosModelos = data;
       this.numeroDeModelos = this.modelos.length;
-    });
-
-   
+    });  
    
   }
+
+  onSubmit(): void { };
+  
+  onReset(): void {
+    this.f.reset();
+  }
+  
 }
 

@@ -1,79 +1,171 @@
+
+.Cards{
+  display: flex;
+  flex-direction: row;
+}
+.titulo{
+  width: 100%;
+  height: auto;
+  padding-left: 50px;
+  padding-top: 30px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  /* identical to box height */ 
+   
+  color: #2C2C2C;
+  background-color:#f9f9f9;
+
+
+} 
+
+.card-one-four{
+  margin-left: 50px;
+  margin-top: 35px;    
   
-  .titulo{
-    width: 100%;
-    height: auto;
-    padding-left: 50px;
-    padding-top: 30px;
-  
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 34px;
-    /* identical to box height */ 
-     
-    color: #2C2C2C;
-    background-color:#f9f9f9;
-  
-  
-  }
-  
-  .button{
-    margin-left: 1135px;
-    
+
+  width: 1400px;
+  height: 690px;
+
+  background: #FFFFFF;
+  border-radius: 9px;
+  box-shadow: 10px 5px 5px rgb(141, 140, 140);
+}
+
+.card-block{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-left: 15px ;
+  padding-top:40px ;
+
+  width: 1380px;
+  height: 588px;
+
+}
+
+.card-block2{
+  height: 400px;
+  width: 450px;
+  margin-right: 30px;
+}
+.group{
+  height: 400px;
+  width: 450px;  
+}
+
+.form-group{     
+    margin-top: 80px;
   }
 
-  a{
-    text-decoration: none;
+  .input-field{
+    margin-top: 80px;
+}
+.form-group2{     
+  margin-top: 30px;
+}
+
+.input-field2{
+  margin-top: 80px;
+}
+
+  .form-place{
+    width: 450px;
+    height: 40px;
+    background-color: #f3f3f7; 
+    color: #000000;    
+    border: none;
+
+  } 
+
+  .form-place2{
+    width: 450px;
+    height: 40px;
+    border: none;
+    background-color: #f3f3f7; 
+    margin-top: 50px;
+    color: #000000;    
+
+  } 
+
+  .radius-intern{
+    padding-top: 40px;
   }
- 
-  .card-one-four{
-    margin-left: 50px;
-    margin-top: 35px;
-  
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  
-    width: 1400px;
-    height: 498px;
-  
-    background: #FFFFFF;
-    border-radius: 9px;
-    box-shadow: 10px 5px 5px rgb(141, 140, 140);
-  
-  
-    
+
+  .radius-intern2{
+    padding-top: 40px;
   }
-  
-  .card-title-four{
-    padding: 30px 0px 0px 30px;
+
+  h3{
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 20px;
-    line-height: 24px;
+    line-height: 17px;
+    margin-top: 70px;
+    
+  }
+ select{
+    width: 450px;
+    height:40px;
+    border: #4d4c4c;
+    background-color: #f3f3f7; 
+
+  }
+
+  p{
+    flex-direction: row;
    
-    color: #595959;
-  
-    width: 300px;
-  
   }
-  
-  .table{
-    width: 1200px;
-    height: 398px;
-    text-align: center;
-    margin-bottom: 20px;
-  
+
+  .with-gap{
+    margin-left: 20px;
+    width: 30px;
+    padding-right: 30px;
   }
-  
-  th tr{
-    text-align: center;
+
+  label{
+    padding-left: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 17px;
   }
-  
-  .card-body-four{
-    padding-left: 80px;
-  
-  
-  }
+
+  .buttons{
+    height: 100px;
+    // background-color: #2C2C2C; 
+    display: flex;
+    justify-content: flex-end; 
+    }
+
+   .btn{
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: row-reverse;   
+    align-items: center; 
+
+   }
+
+   #create{
+      margin-left: 30px;
+      
+   }
+
+   #reset{
+    margin-left: 30px;
+
+   }
+
+   #back{
+    margin-left: 30px;
+    margin-right: 60px;
+    background-color: #EBEBEB;
+   }
+
+   

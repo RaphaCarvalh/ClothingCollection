@@ -1,1 +1,66 @@
-<p>editar-colecao works!</p>
+<app-menu-topo>
+  
+    <div class="Cards">
+      <mat-toolbar class="titulo">
+            <span>Editar Coleção</span>          
+      </mat-toolbar>   
+    </div>  
+    <div class="card-one-four">        
+        <form id='form' [formGroup]="f"  (ngSubmit)="onSubmit()">  
+            <div class="card-block">
+                <div class="group">              
+                <div class="form-group">
+                    <input formControlName="colecao" type="text" class="form-place" placeholder="Nome da Coleção">  
+                    <div *ngIf="f.get('colecao').hasError('required') && f.get('colecao').touched" class="form-control-feedback">
+                    Insira as informações solicitadas
+                    </div>
+                </div>                  
+                <div class="form-group">
+                  <input formControlName="estacao" type="text" class="form-place" placeholder="Para qual estação?">  
+                  <div *ngIf="f.get('estacao').hasError('required') && f.get('estacao').touched" class="form-control-feedback">
+                    Insira as informações solicitadas
+                  </div>
+              </div>   
+              <div class="form-group">
+                <input formControlName="orcamento" type="text" class="form-place" placeholder="Qual é o orçamento desta coleção?">  
+                <div *ngIf="f.get('orcamento').hasError('required') && f.get('orcamento').touched" class="form-control-feedback">
+                    Insira as informações solicitadas
+                </div>
+            </div>                 
+            </div>
+            <div class="row">
+            <div class="card-block2"> 
+              <div class="form-group2">
+                <input formControlName="responsavel" type="text" class="form-place2" id="" placeholder="Responsável pela coleção">  
+                <div *ngIf="f.get('responsavel').hasError('required') && f.get('responsavel').touched" class="form-control-feedback">
+                    Insira as informações solicitadas
+                </div>
+            </div>                  
+                <div class="form-group2">
+                    <input formControlName="modelo" type="text" class="form-place2" id="" placeholder="Para qual marca você está criando?">  
+                    <div *ngIf="f.get('modelo').hasError('required') && f.get('modelo').touched" class="form-control-feedback">
+                        Insira as informações solicitadas
+                    </div>
+                </div>                  
+                <div class="form-group2">
+                  <input formControlName="anoLancamento" type="text" class="form-place2" id="" placeholder="Ano de Lançamento">  
+                  <div *ngIf="f.get('anoLancamento').hasError('required') && f.get('anoLancamento').touched" class="form-control-feedback">
+                    Insira as informações solicitadas
+                  </div>
+              </div>             
+        </div>
+        <div class="fundos">
+          <p class="img"><img src="../../../assets/Elementos/image1.png"></p>
+          </div>    
+      </div>
+    </div>
+        <div class="buttons">
+           <div><button  type="submit" id="create" class="btn btn-primary" >Criar Conta</button></div>
+           <div><button  type="submit" id="reset" class="btn btn-primary" (click)="onReset()" >Limpar</button></div>
+           <div><button  type="submit" id="back" class="btn" routerLink="../colecoes" >Cancelar</button>          </div>
+      </div> 
+      
+      
+    </form>
+    </div>      
+  </app-menu-topo>

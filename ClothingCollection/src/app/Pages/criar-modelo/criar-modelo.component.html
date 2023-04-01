@@ -1,44 +1,75 @@
 <app-menu-topo>
   
-    <div class="Cards">
-      <mat-toolbar class="titulo">
-            <span>Modelos</span>
-              <div class="button">
-              <a href='' routerLink="../criar-modelo">
-              <button type="button" class="btn btn-primary">
-                Criar Modelo
-              </button></a>
+  <div class="Cards">
+    <mat-toolbar class="titulo">
+          <span>Criar Modelo</span>          
+    </mat-toolbar>   
+  </div>  
+  <div class="card-one-four">        
+      <form id='form' [formGroup]="f"  onsubmit="umaVez();">  
+          <div class="card-block">
+              <div class="group">              
+              <div class="form-group">
+                  <input formControlName="nome" type="text" class="form-place" placeholder="Nome do Modelo">  
+                  <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
+                      Insira algum nome!
+                  </div>
+              </div>                  
+              <div class="input-field" >
+                  <select >
+                    <option id="input-place" value="" disabled selected>Selecione a Coleção</option>
+                    <option id="input-place" value="1">Outono/Inverno</option>
+                    <option id="input-place" value="2">Primavera/Verão</option>
+                    <option id="input-place" value="3">Verão</option>
+                  </select>                    
+              </div>  
+              <div class="radius-control">
+                  <h3 class="radius-text">Possui bordado?</h3>
+                  <div class="radius-intern">
+                      <p>
+                          <input class="with-gap" name="group3" type="radio" id="test4" checked />
+                          <label for="test5">Sim</label>
+                          <input class="with-gap" name="group3" type="radio" id="test5" checked />
+                          <label for="test5">Não</label>
+                      </p>
+                  </div>                    
+              </div>                
           </div>
           
-      </mat-toolbar>   
-    </div>  
-    <a routerLink="../criar-modelo"> 
-      <div class="card-one-four">
-        <div class="card-four">          
-            <h5 class="card-title-four">Maiores Orçamentos</h5>
-          </div>  
-            <div class="card-body-four">
-                    <table class="table">
-                      <thead class="thead-light text-center">
-                        <tr>
-                          <th class="w-40">ModeloID</th>
-                          <th class="w-40">Nome do Modelo</th>
-                          <th class="w-40">Responsável</th>
-                          <th class="w-40">Coleção</th>
-                        </tr>
-                      </thead>
-            
-                      <tbody>                        
-                        <tr *ngFor="let modelos of modelos">
-                          <td >{{ modelos.modeloid }}</td>
-                          <td>{{ modelos.nomedoproduto }}</td>
-                          <td>{{ modelos.responsavel }}</td>
-                          <td>{{ modelos.colecao }}</td>                                           
-                       
-                        </tr>
-                      </tbody>
-                    </table>
+          <div class="card-block2"> 
+              <div class="input-field2" >
+                  <select >
+                    <option value="" disabled selected>Tipo do modelo</option>
+                    <option value="1">Sapato Social</option>
+                    <option value="2">Camiseta Básica</option>
+                    <option value="3">Calça Jeans</option>
+                  </select>                    
+              </div>                  
+              <div class="form-group2">
+                  <input formControlName="nome" type="text" class="form-place2" id="" placeholder="Responsável do modelo">  
+                  <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
+                      Insira algum nome!
+                  </div>
+              </div>                  
+              <div class="radius-control2">
+                  <h3 class="radius-text2">Possui estampa?</h3>
+                  <div class="radius-intern2">
+                      <p>
+                          <input class="with-gap" name="group4" type="radio"  checked />
+                          <label for="test5">Sim</label>
+                          <input class="with-gap" name="group4" type="radio"  checked />
+                          <label for="test5">Não</label>
+                      </p>
+                  </div>                    
               </div>
-        </div>
-    </a>
-  </app-menu-topo>
+          </div>
+      </div>
+      <div class="buttons">
+         <div><button  type="submit" id="create" class="btn btn-primary" >Criar Conta</button></div>
+         <div><button  type="submit" id="reset" class="btn btn-primary" (click)="onReset()" >Limpar</button></div>
+         <div><button  type="submit" id="back" class="btn" routerLink="../modelos">Cancelar</button>          </div>
+    </div> 
+    
+  </form>
+  </div>      
+</app-menu-topo>

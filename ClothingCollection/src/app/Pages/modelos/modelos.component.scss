@@ -1,4 +1,4 @@
-  
+ 
   .titulo{
     width: 100%;
     height: auto;
@@ -14,26 +14,20 @@
      
     color: #2C2C2C;
     background-color:#f9f9f9;
-  
-  
   }
   
   .button{
     margin-left: 1135px;
-    
   }
 
-  a{
-    text-decoration: none;
-  }
  
   .card-one-four{
     margin-left: 50px;
     margin-top: 35px;
   
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: flex-start;
   
     width: 1400px;
     height: 498px;
@@ -44,6 +38,12 @@
   
   
     
+  }
+  .card-body-four{
+    margin-right: 70px;  
+    margin-top: 30px;
+    text-align: center;
+
   }
   
   .card-title-four{
@@ -60,20 +60,21 @@
   
   }
   
-  .table{
+  .hiperlink{
     width: 1200px;
     height: 398px;
     text-align: center;
-    margin-bottom: 20px;
-  
   }
   
-  th tr{
+  th tr {
     text-align: center;
   }
   
   .card-body-four{
     padding-left: 80px;
-  
-  
+  }
+
+
+  a{
+    text-decoration: none;
   }

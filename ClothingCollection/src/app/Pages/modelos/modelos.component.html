@@ -9,15 +9,15 @@
               Criar Modelo
             </button></a>
         </div>
-        
     </mat-toolbar>   
-  </div>  
-  <a routerLink="../criar-modelo"> 
+  </div> 
+
     <div class="card-one-four">
       <div class="card-four">          
           <h5 class="card-title-four">Maiores Orçamentos</h5>
         </div>  
           <div class="card-body-four">
+            <a routerLink="../editar-modelo"> 
                   <table class="table">
                     <thead class="thead-light text-center">
                       <tr>
@@ -33,12 +33,16 @@
                         <td >{{ modelos.modeloid }}</td>
                         <td>{{ modelos.nomedoproduto }}</td>
                         <td>{{ modelos.responsavel }}</td>
-                        <td>{{ modelos.colecao }}</td>                                           
+                        <td>{{ modelos.colecao }}</td>                                     
                      
                       </tr>
                     </tbody>
                   </table>
+                </a>
+
             </div>
       </div>
-  </a>
 </app-menu-topo>
+
+
+

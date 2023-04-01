@@ -11,68 +11,33 @@ import { ModelosService } from 'src/app/services/modelos.service';
   templateUrl: './criar-colecao.component.html',
   styleUrls: ['./criar-colecao.component.scss']
 })
-export class CriarColecaoComponent implements OnInit {
-  
-  //Captura da data
-    formatsDateTest: string[] = [
-      'MM/yy'
-    ];
-  
-    dateNow: Date = new Date();
-    dateNowISO = this.dateNow.toISOString();
-  dateNowMilliseconds = this.dateNow.getTime();
-
-
-  //valores
-
-  randonone: number;
-  randontwo: number;
-
-
-  randonOne(): number {
-    const min = 1000;
-    const max = 9999;
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
-  randonTwo(): number {
-    const min = 1;
-    const max = 99;
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
+export class CriarColecaoComponent implements OnInit { 
  
-  /////Construção das requisições
-    
+   
   colecoes: Colecoes[] = [];
   modelos: Modelos[] = [];
-  colect: any;
   f: FormGroup;
   form: any;
-  formularioDeLogin: any;
-  service: any;
-  http: any;
-  
 
 
   constructor(private colecoesService: ColecoesService, private modelosService: ModelosService,
     private router: Router, private fb: FormBuilder) {      
         this.f = this.fb.group({
       
-          // nome: ['', [Validators.required, Validators.minLength(3)]],
-      
-          // empresa: ['', [Validators.required, Validators.minLength(2)]],
-      
-          // cnpj: ['', [Validators.required, Validators.minLength(14), Validators.maxLength(18), Validators.pattern("^[0-9]*$")]],
-          
-          // email: ['', [Validators.required, Validators.email, ]],
-      
-          // password: ['', [Validators.required, , Validators.minLength(8), Validators.maxLength(8)]],
-      
-          // repassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
+          colecao: ['', [Validators.required, Validators.minLength(3)]],
+          estacao: ['', [Validators.required, Validators.minLength(3)]], 
+          orcamento: ['', [Validators.required, Validators.minLength(3)]], 
+          responsavel: ['', [Validators.required, Validators.minLength(3)]], 
+          modelo: ['', [Validators.required, Validators.minLength(3)]], 
+          anoLancamento: ['', [Validators.required, Validators.minLength(3)]], 
+
+         
         })
     this.getColecao();
     this.getModelo();    
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
   
   getColecao() {
@@ -96,7 +61,21 @@ export class CriarColecaoComponent implements OnInit {
   }
 
 
-  async criarColecao() {
+  // async criarColecao() {
+  //   if (this.f.valid) {
+  //     const colecao: Colecoes = this.f.value;
+  //     console.log(colecao);
+  //     await this.colecoesService.criarColecao(colecao).subscribe(resultado => {
+  //       console.log(resultado);
+  //     });
+  //     alert('Cadastro successful')
+  //     this.f.reset();
+  //     this.getColecao()
+  //   }
+  // }
+
+  async onSubmit(): Promise<void> { 
+    
     if (this.f.valid) {
       const colecao: Colecoes = this.f.value;
       console.log(colecao);
@@ -105,35 +84,13 @@ export class CriarColecaoComponent implements OnInit {
       });
       alert('Cadastro successful')
       this.f.reset();
-      this.getModelo()
+      this.getColecao()
     }
   }
- 
-  dadosColecoes: any[] = [];
-  dadosModelos: any[] = [];
- 
-  numeroDeColecoes : number;
-  numeroDeModelos: number;
-  colecao: any;
-  mediaOrcamentos: number;
-
   
-  ngOnInit(): void {
-    this.randonone = this.randonOne();
-    this.randontwo = this.randonTwo();
-
-    this.colecoesService.getColecao().subscribe(data => {
-      this.dadosColecoes = data;
-      this.numeroDeColecoes = this.colecoes.length;
-    });
-
-    this.modelosService.getModelo().subscribe(data => {
-      this.dadosModelos = data;
-      this.numeroDeModelos = this.modelos.length;
-    });
-
-   
-   
+  onReset(): void {
+    this.f.reset();
   }
+  
 }
 

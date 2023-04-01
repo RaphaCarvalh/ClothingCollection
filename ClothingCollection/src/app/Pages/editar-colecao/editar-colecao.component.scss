@@ -1,0 +1,138 @@
+
+.Cards{
+    display: flex;
+    flex-direction: row;
+  }
+  .titulo{
+    width: 100%;
+    height: auto;
+    padding-left: 50px;
+    padding-top: 30px;
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height */ 
+     
+    color: #2C2C2C;
+    background-color:#f9f9f9;
+  
+  
+  } 
+
+  .card-one-four{
+    margin-left: 50px;
+    margin-top: 35px;    
+    
+  
+    width: 1400px;
+    height: 690px;
+  
+    background: #FFFFFF;
+    border-radius: 9px;
+    box-shadow: 10px 5px 5px rgb(141, 140, 140);
+  }
+  
+  .card-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    margin-left: 15px ;
+    padding-top:20px ;
+
+    width: 1380px;
+    height: 588px;
+  }
+
+
+  .card-block2{
+   margin-left: 100px;
+   
+  }
+
+  .group{
+  padding-left: 90px;
+  }
+
+  .form-group{     
+      margin-top: 50px;
+    }
+
+  .input-field{
+      margin-top: 80px;
+  }
+  .form-group2{     
+    margin-top: 30px;
+  }
+
+  .input-field2{
+    margin-top: 40px;
+}
+
+    .form-place{
+      width: 450px;
+      height: 40px;
+      background-color: #f3f3f7; 
+      color: #000000;    
+      border: none;
+
+    } 
+
+    .form-place2{
+      width: 450px;
+      height: 40px;
+      border: none;
+      background-color: #f3f3f7; 
+      margin-top: 20px;
+      color: #000000;    
+
+    } 
+    .fundos{
+
+      margin-bottom: 100px;
+     
+    }
+    .img{
+      padding-top: 30px;
+      width: 311.94px;
+      height: 230px;
+      padding-right: 54px;
+
+      flex-wrap: wrap;
+    }
+
+   //botoes de ação
+
+    .buttons{
+      height: 100px;
+      // background-color: #2C2C2C; 
+      display: flex;
+      justify-content: flex-end; 
+      }
+
+     .btn{
+      justify-content: space-around;
+      align-items: flex-end;
+      flex-direction: row-reverse;   
+      align-items: center; 
+
+     }
+
+     #create{
+        margin-left: 30px;
+        
+     }
+
+     #reset{
+      margin-left: 30px;
+
+     }
+
+     #back{
+      margin-left: 30px;
+      margin-right: 60px;
+      background-color: #EBEBEB;
+     }

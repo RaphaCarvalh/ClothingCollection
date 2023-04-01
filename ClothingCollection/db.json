@@ -84,56 +84,27 @@
       "colecao": "Coleção Primavera/Verão",
       "responsavel": "Ana Silva",
       "estacao": "Primavera/Verão",
-      "modelo": 2022,
-      "orcamento": 5000
+      "modelo": "Adidas",
+      "orcamento": 5000,
+      "anoLancamento": 2025
     },
     {
-      "id": 2,
-      "colecao": "Coleção Outono/Inverno",
-      "responsavel": "Pedro Oliveira",
-      "estacao": "Outono/Inverno",
-      "modelo": 2022,
-      "orcamento": 6000
+      "colecao": "New year",
+      "estacao": "inverno",
+      "orcamento": "10000",
+      "responsavel": "Rogerio marinho",
+      "modelo": "Adidas",
+      "anoLancamento": "2026",
+      "id": 2
     },
     {
-      "id": 3,
-      "colecao": "Coleção Praia",
-      "responsavel": "Mariana Costa",
-      "estacao": "Verão",
-      "modelo": 2022,
-      "orcamento": 3000
-    },
-    {
-      "id": 4,
-      "colecao": "Coleção Esporte",
-      "responsavel": "Lucas Santos",
-      "estacao": "Primavera/Verão",
-      "modelo": 2022,
-      "orcamento": 4500
-    },
-    {
-      "id": 5,
-      "colecao": "Coleção Luxo",
-      "responsavel": "Isabel Oliveira",
-      "estacao": "Outono/Inverno",
-      "modelo": 2022,
-      "orcamento": 8000
-    },
-    {
-      "id": 6,
-      "colecao": "Coleção Streetwear",
-      "responsavel": "José Silva",
-      "estacao": "Primavera/Verão",
-      "modelo": 2022,
-      "orcamento": 3500
-    },
-    {
-      "id": 7,
-      "colecao": "Coleção Social",
-      "responsavel": "Amanda Almeida",
-      "estacao": "Outono/Inverno",
-      "modelo": 2022,
-      "orcamento": 7000
+      "colecao": "Forever",
+      "estacao": "Outono",
+      "orcamento": "3000",
+      "responsavel": "Junior Tavares",
+      "modelo": "Fernao",
+      "anoLancamento": "2031",
+      "id": 3
     }
   ],
   "email": []

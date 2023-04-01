@@ -1,16 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { map, max } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Colecoes } from 'src/app/model/colecoes';
 import { ColecoesService } from 'src/app/services/colecoes.service';
 import { Router } from '@angular/router';
 import { ModelosService } from 'src/app/services/modelos.service';
 import { Modelos } from 'src/app/model/modelos';
-import { min } from 'rxjs-compat/operator/min';
-import { DataSource } from '@angular/cdk/collections';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { Observable, of as observableOf, merge } from 'rxjs';
+
 
 
 @Component({
@@ -21,12 +15,12 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 export class DashboardComponent implements OnInit {
   
   //Captura da data
-    formatsDateTest: string[] = [
-      'MM/yy'
-    ];
+  formatsDateTest: string[] = [
+    'MM/yy'
+  ];
   
-    dateNow: Date = new Date();
-    dateNowISO = this.dateNow.toISOString();
+  dateNow: Date = new Date();
+  dateNowISO = this.dateNow.toISOString();
   dateNowMilliseconds = this.dateNow.getTime();
 
 
@@ -60,11 +54,11 @@ export class DashboardComponent implements OnInit {
 
   constructor(private colecoesService: ColecoesService, private modelosService: ModelosService,
     private router: Router) {
-    this.getColecao();
-    this.getModelo();    
+    this.getColecaO();
+    this.getModelo();
   }
   
-  getColecao() {
+  getColecaO() {
     this.colecoesService.getColecao().subscribe(data => {
       if (!data) {
         alert('erro')
@@ -87,10 +81,11 @@ export class DashboardComponent implements OnInit {
   dadosColecoes: any[] = [];
   dadosModelos: any[] = [];
  
-  numeroDeColecoes : number;
+  numeroDeColecoes: number;
   numeroDeModelos: number;
   colecao: any;
   mediaOrcamentos: number;
+  orcamentoS: any[];
 
   
   ngOnInit(): void {
@@ -106,11 +101,21 @@ export class DashboardComponent implements OnInit {
       this.dadosModelos = data;
       this.numeroDeModelos = this.modelos.length;
     });
-  
-   
+
+    // this.colecoesService.getColecao().subscribe(data => {
+    //   this.orcamentoS = data.map(item => {
+    //     item.orcamento = +item.orcamento; // converte o valor de string para número
+    //     return item;
+    //   }).sort((a, b) => a.orcamento - b.orcamento).slice(0, 5);
+
+    // });
   }
 
+  
+   
 
+
+//implementação filtro de resultados
 
   private getSortedData(data: Colecoes[]): Colecoes[] {
     if (!this.sort || !this.sort.active || this.sort.direction === '') {

@@ -10,37 +10,19 @@
           <div class="card-block">
               <div class="group">              
               <div class="form-group">
-                  <input formControlName="nome" type="text" class="form-place" placeholder="Nome do Modelo">  
-                  <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
+                  <input formControlName="nomedoproduto" type="text" class="form-place" placeholder="Nome do Modelo">  
+                  <div *ngIf="f.get('nomedoproduto').hasError('required') && f.get('nomedoproduto').touched" class="form-control-feedback">
                       Insira algum nome!
                   </div>
               </div>                  
               <div class="input-field" >
-                  <select >
-                    <option id="input-place" value="" disabled selected>Selecione a Coleção</option>
-                    <tr *ngFor="let modelos of modelos">
-                    <option id="input-place" value="1">{{ modelos.colecao }}</option></tr>
-                    <option id="input-place" value="2">Primavera/Verão</option>
-                    <option id="input-place" value="3">Verão</option>
-                  </select>
-
-                  <select [(ngModel)]="getModelo">
-                    <!-- <option *ngFor="let modelos of modelos" [value]="">{{}}</option> -->
-                  </select>
                   
-
-                  <tr *ngFor="let modelos of modelos">
-                    <option id="input-place" value="1">{{ modelos.modeloid }}</option>
-
-
-
-
-                    <td>{{ modelos.nomedoproduto }}</td>
-                    <td>{{ modelos.colecao }}</td>
-                    <td>{{ modelos.responsavel }}</td>   </tr>
-
-
-
+                <div class="col">
+                    <select required class="form-control" id="estado" formControlName="Selecionar opção">                        
+                      <option value="" selected>Selecionar coleção</option>
+                      <option value="1" *ngFor="let modelo of modeloss | async " [value]="modelo.colecao">{{ modelo.colecao }}</option>
+                    </select>
+                </div> 
               </div>  
               <div class="radius-control">
                   <h3 class="radius-text">Possui bordado?</h3>
@@ -71,8 +53,8 @@
                   </select>                     
               </div>                  
               <div class="form-group2">
-                  <input formControlName="nome" type="text" class="form-place2" id="" placeholder="Responsável do modelo">  
-                  <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
+                  <input formControlName="responsavel" type="text" class="form-place2" id="" placeholder="Responsável do modelo">  
+                  <div *ngIf="f.get('responsavel').hasError('required') && f.get('responsavel').touched" class="form-control-feedback">
                       Insira algum nome!
                   </div>
               </div>                  
@@ -90,7 +72,7 @@
           </div>
       </div>
       <div class="buttons">
-         <div><button  type="submit" id="create" class="btn btn-primary" >Criar Conta</button></div>
+         <div><button  type="submit" id="create" class="btn btn-primary" >Salvar</button></div>
          <div><button  type="submit" id="reset" class="btn btn-primary" (click)="onReset()" >Limpar</button></div>
          <div><button  type="submit" id="back" class="btn" routerLink="../modelos">Cancelar</button>          </div>
     </div> 

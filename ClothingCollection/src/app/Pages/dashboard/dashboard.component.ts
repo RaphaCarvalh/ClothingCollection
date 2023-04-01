@@ -49,6 +49,8 @@ export class DashboardComponent implements OnInit {
   colecoes: Colecoes[] = [];
   modelos: Modelos[] = [];
   colect: any;
+  totalOrcamentos = 0;
+
   
 
 
@@ -56,12 +58,12 @@ export class DashboardComponent implements OnInit {
     private router: Router) {
     this.getColecaO();
     this.getModelo();
+    
   }
   
   getColecaO() {
     this.colecoesService.getColecao().subscribe(data => {
       if (!data) {
-        alert('erro')
         return;
       }
       this.colecoes = data;
@@ -102,44 +104,6 @@ export class DashboardComponent implements OnInit {
       this.numeroDeModelos = this.modelos.length;
     });
 
-    // this.colecoesService.getColecao().subscribe(data => {
-    //   this.orcamentoS = data.map(item => {
-    //     item.orcamento = +item.orcamento; // converte o valor de string para número
-    //     return item;
-    //   }).sort((a, b) => a.orcamento - b.orcamento).slice(0, 5);
-
-    // });
   }
 
-  
-   
-
-
-//implementação filtro de resultados
-
-  private getSortedData(data: Colecoes[]): Colecoes[] {
-    if (!this.sort || !this.sort.active || this.sort.direction === '') {
-      return data;
-    }
-
-    return data.sort((a, b) => {
-      const isAsc = this.sort?.direction === 'asc';
-      switch (this.sort?.active) {
-        case 'orcamentos': return compare(a.orcamento, b.orcamento, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
-        default: return 0;
-      }
-    });
-  }
 }
-
-
-
-  
- 
-
-
-function compare(arg0: number, arg1: number, isAsc: boolean): number {
-  throw new Error('Function not implemented.');
-}
-  

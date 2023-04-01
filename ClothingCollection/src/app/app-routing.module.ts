@@ -17,15 +17,15 @@ import { EditarModeloComponent } from './Pages/editar-modelo/editar-modelo.compo
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: '', component: CriarModeloComponent },
+  { path: '', component: LoginComponent },
   { path: 'redefinirSenha', component: RedefinirSenhaComponent },
   { path: 'senhaRedefinida', component: SenhaRedefinidaComponent },
   { path: 'cadastro', component: CadastroComponent },
 
 
   {
-    // path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard],
-    path: 'dashboard', component: DashboardComponent},
+    path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]
+  },
       { path: 'colecoes', component: ColecoesComponent },
       { path: 'modelos', component: ModelosComponent },
       { path: 'criar-colecao', component: CriarColecaoComponent },

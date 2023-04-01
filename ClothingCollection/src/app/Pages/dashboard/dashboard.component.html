@@ -47,27 +47,27 @@
                     <table class="table">
                       <thead class="thead-light text-center">
                         <tr>
-                          <th class="w-40">ID</th>
-                          <th class="w-40">Coleção</th>
+                          <th class="w-40">ColeçãoID</th>
+                          <th class="w-40">Nome da coleção</th>
                           <th class="w-40">Orçamento</th>
                           <th class="w-40">Responsável</th>
                         </tr>
                       </thead>
             
                       <tbody>                        
-                        <tr *ngFor="let colecoes of colecoes">
+                        <tr *ngFor="let colecoes of colecoes.slice(0, 5)">
                           <td >{{colecoes.id}}</td>
                           <td>{{colecoes.colecao}}</td>
                           <td>{{colecoes.orcamento}}</td>
                           <td>{{colecoes.responsavel}}</td>                          
-                        </tr>
-                        
-
-                       
+                        </tr> 
                       </tbody>
                     </table>
               </div>
         </div>
+
+        <!-- <p>A soma dos orçamentos é: {{ totalOrcamentos }}</p> -->
+
+
       </div>         
- 
 </app-menu-topo>

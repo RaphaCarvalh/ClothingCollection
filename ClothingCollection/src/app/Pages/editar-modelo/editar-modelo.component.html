@@ -6,7 +6,7 @@
       </mat-toolbar>   
     </div>  
     <div class="card-one-four">        
-        <form id='form' [formGroup]="f"  onsubmit="umaVez();">  
+        <form id='form' [formGroup]="f"  (ngSubmit)="onSubmit()">  
             <div class="card-block">
                 <div class="group">              
                 <div class="form-group">
@@ -72,7 +72,7 @@
         </div>
         <div class="buttons">
            <div><button  type="submit" id="remove" class="btn">Excluir</button></div>
-           <div><button  type="submit" id="create" class="btn btn-primary" >Criar Conta</button></div>
+           <div><button  type="submit" id="create" class="btn btn-primary" >Atualizar</button></div>
            <div><button  type="submit" id="reset" class="btn btn-primary" (click)="onReset()" >Limpar</button></div>
            <div><button  type="submit" id="back" class="btn" routerLink="../modelos">Cancelar</button>          </div>
       </div> 

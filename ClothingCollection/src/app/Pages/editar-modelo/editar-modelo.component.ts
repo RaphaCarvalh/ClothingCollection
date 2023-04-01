@@ -76,8 +76,19 @@ export class EditarModeloComponent implements OnInit {
     }
   }
 
-
-  onSubmit(): void { };
+  async onSubmit(): Promise<void> { 
+    
+    if (this.f.valid) {
+      const _modelos: Modelos = this.f.value;
+      console.log(_modelos);
+      await this.modelosService.criarModelo(_modelos).subscribe(resultado => {
+        console.log(resultado);
+      });
+      alert('Cadastro successful')
+      this.f.reset();
+      this.getModelo()
+    }
+  }
   
   onReset(): void {
     this.f.reset();

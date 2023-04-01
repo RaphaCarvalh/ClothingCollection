@@ -44,6 +44,20 @@
       "password": "12345678",
       "repassword": "12345678",
       "id": 8
+    },
+    {
+      "email": "usuario@email.com",
+      "password": "12345678",
+      "id": 9
+    },
+    {
+      "nome": "Raphael",
+      "empresa": "RcComp",
+      "cnpj": "12345678000134",
+      "email": "rapha@email.com",
+      "password": "12341234",
+      "repassword": "12341234",
+      "id": 10
     }
   ],
   "modelos": [
@@ -51,31 +65,31 @@
       "modeloid": 1,
       "nomedoproduto": "Tênis Casual",
       "responsavel": "João da Silva",
-      "colecao": 1
+      "colecao": "verão"
     },
     {
       "modeloid": 2,
       "nomedoproduto": "Sapato Social",
       "responsavel": "Pedro Oliveira",
-      "colecao": 7
+      "colecao": "Outono"
     },
     {
       "modeloid": 3,
       "nomedoproduto": "Camiseta Básica",
       "responsavel": "Ana Silva",
-      "colecao": 6
+      "colecao": "Inverno"
     },
     {
-      "modeloid": 4,
-      "nomedoproduto": "Blusa de Frio",
-      "responsavel": "Mariana Costa",
-      "colecao": 3
+      "modeloid": 3,
+      "nomedoproduto": "Camiseta Básica",
+      "responsavel": "Ana Silva",
+      "colecao": "Inverno"
     },
     {
-      "modeloid": 5,
-      "nomedoproduto": "Calça Jeans",
-      "responsavel": "Lucas Santos",
-      "colecao": 4
+      "modeloid": 3,
+      "nomedoproduto": "Camiseta Básica",
+      "responsavel": "Ana Silva",
+      "colecao": "Inverno"
     }
   ],
   "colecoes": [
@@ -105,6 +119,33 @@
       "modelo": "Fernao",
       "anoLancamento": "2031",
       "id": 3
+    },
+    {
+      "colecao": "Forever",
+      "estacao": "Outono",
+      "orcamento": "3000",
+      "responsavel": "Junior Tavares",
+      "modelo": "Fernao",
+      "anoLancamento": "2031",
+      "id": 4
+    },
+    {
+      "colecao": "New year",
+      "estacao": "inverno",
+      "orcamento": "10000",
+      "responsavel": "Rogerio marinho",
+      "modelo": "Adidas",
+      "anoLancamento": "2026",
+      "id": 5
+    },
+    {
+      "colecao": "Happy",
+      "estacao": "Primavera",
+      "orcamento": "5000",
+      "responsavel": "Pharrel William",
+      "modelo": "Onshore",
+      "anoLancamento": "2025",
+      "id": 6
     }
   ],
   "email": []

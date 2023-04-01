@@ -31,7 +31,7 @@ export class CadastroComponent implements OnInit{
 
       empresa: ['', [Validators.required, Validators.minLength(2)]],
 
-      cnpj: ['', [Validators.required, Validators.minLength(14), Validators.maxLength(18), Validators.pattern("^[0-9]*$")]],
+      cnpj: ['', [Validators.required, Validators.minLength(14), Validators.maxLength(14), Validators.pattern("^[0-9]*$")]],
       
       email: ['', [Validators.required, Validators.email, ]],
 

@@ -10,7 +10,7 @@
             <div class="card-block">
                     <h4 class="card-title">Sign In</h4>
                 <div class="cards">
-                    <form [formGroup]="f" novalidate>
+                    <form [formGroup]="f" novalidate (ngSubmit)="onSubmit()">
                         <div class="form-group" [class.has-danger]="((f.get('email').hasError('required') || f.get('email').hasError('email')) 
                         && f.get('email').hasError('email') )&& f.get('email').touched">
 
@@ -51,7 +51,7 @@
                                 </div>
 
                         </div >  
-                        <button class="btn" type="submit" class="btn btn-primary" (click)="fazerLogin()">
+                        <button class="btn" type="submit" class="btn btn-primary" >
                             Entrar
                         </button>
                         

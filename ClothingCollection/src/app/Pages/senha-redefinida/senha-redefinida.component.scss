@@ -85,7 +85,7 @@ label{
     
 }
   
-.btn-primary{
+.btn{
         color: #FFFFFF;
         background: #0073CF;
         border-radius: 6px;
@@ -94,14 +94,15 @@ label{
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        padding: 14px 105px;
+        padding: 14px 130px;
         // gap: 10px;
         margin-left: 50px;
         margin-top: 80px;
         font-family: 'Inter';
          font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
+         font-size: 14px;
+         font-weight: 400px;        
+ 
         line-height: 22px;
         
     }

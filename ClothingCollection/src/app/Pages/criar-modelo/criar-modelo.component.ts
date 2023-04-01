@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Colecoes } from 'src/app/model/colecoes';
 import { Modelos } from 'src/app/model/modelos';
 import { ColecoesService } from 'src/app/services/colecoes.service';
@@ -20,6 +21,8 @@ export class CriarModeloComponent implements OnInit {
 
   modelos: Modelos[] = [];
 
+  modeloss: Observable<Modelos[]>;
+
   colect: any;
   f: FormGroup;
   form: any;
@@ -29,7 +32,9 @@ export class CriarModeloComponent implements OnInit {
     private router: Router, private fb: FormBuilder) {      
         this.f = this.fb.group({
       
-          nome: ['', [Validators.required, Validators.minLength(3)]],     
+          responsavel: ['', [Validators.required, Validators.minLength(3)]],
+          nomedoproduto: ['', [Validators.required, Validators.minLength(3)]],
+          // colecao: ['', [Validators.required]],     
          
         })
     this.getColecao();
@@ -56,8 +61,14 @@ export class CriarModeloComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {     
+  ngOnInit() {
+    // this.modelosService.getModelo().subscribe(dados => {
+    //   this.modeloss = dados;
+    //   console.log(dados);
+    // })
+    this.modeloss = this.modelosService.getModelo();
   }
+  
  
   async onSubmit(): Promise<void> { 
     

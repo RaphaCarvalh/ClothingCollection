@@ -68,15 +68,22 @@ export class LoginComponent implements OnInit{
       this.listarUsers()
     }
   }
-  onReset(): void {
-    this.f.reset();
-  }
 
-  fazerLogin() {
+  async onSubmit(): Promise<void> {
     console.log(this.usuario);
     this.authService.fazerLogin(this.usuario)
    
   }
+  
+  onReset(): void {
+    this.f.reset();
+  }
+
+  // fazerLogin() {
+  //   console.log(this.usuario);
+  //   this.authService.fazerLogin(this.usuario)
+   
+  // }
 
   
 }

@@ -76,23 +76,23 @@ bash Copy code ng serve Acesse a aplicação em seu navegador no endereço http:
 6. Welcome!  \ {^_^} /
 
 
-📷 Demonstração A seguir, algumas demonstrações das páginas do projeto ClothingCollection:
-<div align="center">
+📷 Demonstração A seguir, algumas demonstrações das páginas do projeto ClothingCollection:<br>
+<div align="left"><br>
   Controle tudo de um só lugar, monitore e acesse as principais funionalidades do sistema, com tabelas interativas tenha tudo sempre a mão!<br>
-  <img src="../ClothingCollection/src/assets/readme/controle.png"height="400" width="520" alt="Último commit">
+  <img src="../ClothingCollection/src/assets/readme/controle.png"height="400" width="720" alt="Último commit">
 </div>
 <br>
-<div align="center">
+<div align="left"><br>
   Controle multinivel de usuarios e rotas de acesso, 
 tenha a máxima segurança na manipulação de suas informações.<br>
-  <img src="../ClothingCollection/src/assets/readme/login.png"height="400" width="520" alt="Linguagem mais utilizada">
-    <img src="../ClothingCollection/src/assets/readme/cadastro.png"height="400" width="520" alt="Linguagem mais utilizada">
+  <img src="../ClothingCollection/src/assets/readme/login.png"height="400" width="420" alt="Linguagem mais utilizada"><br>
+    <img src="../ClothingCollection/src/assets/readme/cadastro.png"height="400" width="420" alt="Linguagem mais utilizada">
 </div>
 <br>
-<div align="center">
+<div align="left">
   Tenha total controle da sua coleção e faça o que quiser com ela.<br>
-  <img src="../ClothingCollection/src/assets/readme/edicao.png" height="400" width="520" alt="ClothingCollection Logo">
-    <img src="../ClothingCollection/src/assets/readme/cadastroitem.png" height="400" width="520" alt="ClothingCollection Logo">
+  <img src="../ClothingCollection/src/assets/readme/edicao.png" height="400" width="520" alt="ClothingCollection Logo"><br>
+    <img src="../ClothingCollection/src/assets/readme/cadastroitem.png" height="400" width="720" alt="ClothingCollection Logo">
 </div>
 
 <br>

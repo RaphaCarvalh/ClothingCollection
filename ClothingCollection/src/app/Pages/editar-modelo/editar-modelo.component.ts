@@ -15,7 +15,9 @@ import { ModelosService } from 'src/app/services/modelos.service';
 
 export class EditarModeloComponent implements OnInit {
 
-   
+  modeloss: Modelos[];
+  mOdelos!: any | Modelos;
+
  
   colecoes: Colecoes[] = [];
   modelos: Modelos[] = [];
@@ -36,7 +38,7 @@ export class EditarModeloComponent implements OnInit {
          
         })
     this.getColecao();
-    this.getModelo();    
+    this.getModelo(); 
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -92,6 +94,15 @@ export class EditarModeloComponent implements OnInit {
   
   onReset(): void {
     this.f.reset();
+  }
+
+  async deletaModelo(modelin: Modelos) {
+    this.modelosService.excluirModelo(modelin.modeloid).toPromise().then(() => {
+      this.getModelo()
+      window.location.href = "/src/app/Pages/modelos";
+    }, err => {
+      console.log(err)
+    })    
   }
   
 }

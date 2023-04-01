@@ -20,7 +20,7 @@
                 <div class="col">
                     <select required class="form-control" id="estado" formControlName="Selecionar opção">                        
                       <option value="" selected>Selecionar coleção</option>
-                      <option value="1" *ngFor="let modelo of modeloss | async " [value]="modelo.colecao">{{ modelo.colecao }}</option>
+                      <option value="1" *ngFor="let modelo of modeloss | async " >{{ modelo.colecao }}</option>
                     </select>
                 </div> 
               </div>  

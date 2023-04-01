@@ -56,8 +56,8 @@
     </div>
         <div class="buttons">
           
-           <div><tr *ngFor="let tarefa of colecoes"></tr>
-            <button  type="submit" id="remove" class="btn" (click)="excluirTarefa(tarefa)">Excluir</button></div>
+           <div><tr *ngFor="let colecao of colecoes"></tr>
+            <button  type="submit" id="remove" class="btn" (click)="deletaColecao(colecaO)">Excluir</button></div>
            <div><button  type="submit" id="create" class="btn btn-primary" (click)="editarTarefa(tarefa)" >Atualizar</button></div>
            <div><button  type="submit" id="reset" class="btn btn-primary" (click)="onReset()" >Limpar</button></div>
            <div><button  type="submit" id="back" class="btn" routerLink="../colecoes" >Cancelar</button></div>

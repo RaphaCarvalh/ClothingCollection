@@ -83,6 +83,8 @@ export class CriarModeloComponent implements OnInit {
       this.getModelo()
     }
   }
+
+  
   
   onReset(): void {
     this.f.reset();

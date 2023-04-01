@@ -64,32 +64,8 @@ export class EditarColecaoComponent implements OnInit {
   }
   //////////////////////////////////////////////////////////////
 
-  listarTarefas() {
-    this.colecoesService.getColecao().subscribe(data => {
-      this.colecoes = data;
-    })
-  }
-
-  async criarTarefa() {
-    const tarefa: Colecoes = this.f.value;
-    
-    await this.colecoesService.criarColecao(tarefa);
-    this.listarTarefas()
-  }
-
-  editarTarefa(_colecoes: Colecoes) {
-    this.router.navigate([`/colecoes/${_colecoes.id}`])
-  }
-
-  async excluirTarefa(tarefa: Colecoes) {
-    this.colecoesService.excluirTarefa(tarefa.id).toPromise().then(() => {
-      this.listarTarefas()
-    }, err => {
-      console.log(err)
-    })    
-  }
-
-
+ editarTarefa(_colecoes: Colecoes) {
+    this.router.navigate([`/colecoes/${_colecoes.id}`]) }
 
   ///////////////////////////////////////////////////////////////////
   getColecao() {
@@ -112,29 +88,6 @@ export class EditarColecaoComponent implements OnInit {
     })
   }
 
-  // async deletaColecao(colecaow: Colecoes) {
-  //   this.colecoesService.excluirTarefa(colecaow.id).toPromise().then(() => {
-  //     this.excluirTarefa()
-  //     window.location.href = "/";
-  //   }, err => {
-  //     console.log(err)
-  //   })    
-  // }
-
-
-  // async criarColecao() {
-  //   if (this.f.valid) {
-  //     const colecao: Colecoes = this.f.value;
-  //     console.log(colecao);
-  //     await this.colecoesService.criarColecao(colecao).subscribe(resultado => {
-  //       console.log(resultado);
-  //     });
-  //     alert('Cadastro successful')
-  //     this.f.reset();
-  //     this.getColecao()
-  //   }
-  // }
-
   async onSubmit(): Promise<void> { 
     
     if (this.f.valid) {
@@ -152,9 +105,16 @@ export class EditarColecaoComponent implements OnInit {
   onReset(): void {
     this.f.reset();
   }
+
+  async deletaColecao(colect: Colecoes) {
+    this.modelosService.excluirModelo(colect.id).toPromise().then(() => {
+      this.getColecao()
+      window.location.href = "/src/app/Pages/colecoes";
+    }, err => {
+      console.log(err)
+    })    
+  }
   
 }
 
-{
 
-}

@@ -24,12 +24,12 @@ export class CriarColecaoComponent implements OnInit {
     private router: Router, private fb: FormBuilder) {      
         this.f = this.fb.group({
       
-          colecao: ['', [Validators.required, Validators.minLength(3)]],
-          estacao: ['', [Validators.required, Validators.minLength(3)]], 
-          orcamento: ['', [Validators.required, Validators.minLength(3)]], 
-          responsavel: ['', [Validators.required, Validators.minLength(3)]], 
-          modelo: ['', [Validators.required, Validators.minLength(3)]], 
-          anoLancamento: ['', [Validators.required, Validators.minLength(3)]], 
+          colecao: ['', [Validators.required, Validators.minLength(1)]],
+          estacao: ['', [Validators.required, Validators.minLength(1)]], 
+          orcamento: ['', [Validators.required, Validators.minLength(1)]], 
+          responsavel: ['', [Validators.required, Validators.minLength(1)]], 
+          modelo: ['', [Validators.required, Validators.minLength(1)]], 
+          anoLancamento: ['', [Validators.required, Validators.minLength(1)]], 
 
          
         })
@@ -59,20 +59,6 @@ export class CriarColecaoComponent implements OnInit {
       this.modelos = data;
     })
   }
-
-
-  // async criarColecao() {
-  //   if (this.f.valid) {
-  //     const colecao: Colecoes = this.f.value;
-  //     console.log(colecao);
-  //     await this.colecoesService.criarColecao(colecao).subscribe(resultado => {
-  //       console.log(resultado);
-  //     });
-  //     alert('Cadastro successful')
-  //     this.f.reset();
-  //     this.getColecao()
-  //   }
-  // }
 
   async onSubmit(): Promise<void> { 
     

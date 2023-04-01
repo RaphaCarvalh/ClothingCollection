@@ -25,7 +25,6 @@ getColecao(): Observable<Colecoes[]> {
     return this.http.get<Colecoes[]>(this.baseUrl)
 }
 
-
 getTarefa(id: string): Observable<any> {
   return this.http.get<Colecoes>(`${this.baseUrl}/colecoes/${id}`)
 }

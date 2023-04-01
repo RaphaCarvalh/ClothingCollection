@@ -56,15 +56,15 @@ bash Copy code ng serve Acesse a aplicação em seu navegador no endereço http:
 
 <h3>Ahhh... Não esqueça de partir o Json, afinal nossos dados vem de lá! Por enquanto😎!!</h3>
 
-1. Garanta estar na pasta raiz do projeto.
+7. Garanta estar na pasta raiz do projeto.
 
-2. No terminal use o comando  json-server --watch db.json
+8. No terminal use o comando  json-server --watch db.json
 
-3. Voce deverá ver esse item   \ {^_^} / hi!
+9. Voce deverá ver esse item   \ {^_^} / hi!
 
-4. Para checar as rotas fora da aplicação utilize as toras passadas logo a seguir da apresentação
+10. Para checar as rotas fora da aplicação utilize as toras passadas logo a seguir da apresentação
 
-5.  Resources
+11.  Resources
       http://localhost:3000/user<br>
       http://localhost:3000/modelos<br>
       http://localhost:3000/colecoes<br>
@@ -73,26 +73,24 @@ bash Copy code ng serve Acesse a aplicação em seu navegador no endereço http:
     Home
       http://localhost:3000
 
-6. Welcome!  \ {^_^} /
+12. Welcome!  \ {^_^} /
 
 
-📷 Demonstração A seguir, algumas demonstrações das páginas do projeto ClothingCollection:<br>
+📷<h5> Demonstração A seguir, algumas demonstrações das páginas do projeto ClothingCollection:</h5><br>
 <div align="left"><br>
-  Controle tudo de um só lugar, monitore e acesse as principais funionalidades do sistema, com tabelas interativas tenha tudo sempre a mão!<br>
+  <h5>Controle tudo de um só lugar, monitore e acesse as principais funionalidades do sistema, com tabelas interativas tenha tudo sempre a mão!</h5><br>
   <img src="../ClothingCollection/src/assets/readme/controle.png"height="400" width="720" alt="Último commit">
 </div>
 <br>
 <div align="left"><br>
-  Controle multinivel de usuarios e rotas de acesso, 
-tenha a máxima segurança na manipulação de suas informações.<br>
+ <h5> Controle multinivel de usuarios e rotas de acesso, 
+tenha a máxima segurança na manipulação de suas informações.</h5><br>
   <img src="../ClothingCollection/src/assets/readme/login.png"height="400" width="420" alt="Linguagem mais utilizada"><br>
     <img src="../ClothingCollection/src/assets/readme/cadastro.png"height="400" width="420" alt="Linguagem mais utilizada">
 </div>
 <br>
 <div align="left">
-  Tenha total controle da sua coleção e faça o que quiser com ela.<br>
+ <h5> Tenha total controle da sua coleção e faça o que quiser com ela.</h5><br>
   <img src="../ClothingCollection/src/assets/readme/edicao.png" height="400" width="520" alt="ClothingCollection Logo"><br>
     <img src="../ClothingCollection/src/assets/readme/cadastroitem.png" height="400" width="720" alt="ClothingCollection Logo">
-</div>
-
-<br>
+</div><br>

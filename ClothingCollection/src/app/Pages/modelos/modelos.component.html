@@ -23,8 +23,9 @@
                       <tr>
                         <th class="w-40">ModeloID</th>
                         <th class="w-40">Nome do Modelo</th>
-                        <th class="w-40">Responsável</th>
                         <th class="w-40">Coleção</th>
+                        <th class="w-40">Responsável</th>
+
                       </tr>
                     </thead>
           
@@ -32,8 +33,8 @@
                       <tr *ngFor="let modelos of modelos">
                         <td >{{ modelos.modeloid }}</td>
                         <td>{{ modelos.nomedoproduto }}</td>
-                        <td>{{ modelos.responsavel }}</td>
-                        <td>{{ modelos.colecao }}</td>                                     
+                        <td>{{ modelos.colecao }}</td>
+                        <td>{{ modelos.responsavel }}</td>                                     
                      
                       </tr>
                     </tbody>

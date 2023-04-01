@@ -21,13 +21,27 @@ criarColecao(colecoes: Colecoes): Observable<Colecoes> {
 }
 
 //Pegando tudo
-  getColecao(): Observable<Colecoes[]> {
+getColecao(): Observable<Colecoes[]> {
     return this.http.get<Colecoes[]>(this.baseUrl)
-  }
+}
 
+
+getTarefa(id: string): Observable<any> {
+  return this.http.get<Colecoes>(`${this.baseUrl}/colecoes/${id}`)
+}
  //Excluir 
  excluirColecao(id: number): Observable<any> {
   return this.http.delete<any>(`${this.baseUrl}/colecoes/${id}`);
 }
+
+atualizarTarefa(tarefa: Colecoes): Observable<any> {
+  return this.http.put<any>(`${this.baseUrl}/colecoes/${tarefa.id}`, tarefa);
+}
+
+excluirTarefa(id: number): Observable<any> {
+  return this.http.delete<any>(`${this.baseUrl}/colecoes/${id}`);
+}
+  
+
 
 }

@@ -6,7 +6,7 @@
     </mat-toolbar>   
   </div>  
   <div class="card-one-four">        
-      <form id='form' [formGroup]="f"  onsubmit="umaVez();">  
+      <form id='form' [formGroup]="f"  (ngSubmit)="onSubmit()">  
           <div class="card-block">
               <div class="group">              
               <div class="form-group">
@@ -18,10 +18,29 @@
               <div class="input-field" >
                   <select >
                     <option id="input-place" value="" disabled selected>Selecione a Coleção</option>
-                    <option id="input-place" value="1">Outono/Inverno</option>
+                    <tr *ngFor="let modelos of modelos">
+                    <option id="input-place" value="1">{{ modelos.colecao }}</option></tr>
                     <option id="input-place" value="2">Primavera/Verão</option>
                     <option id="input-place" value="3">Verão</option>
-                  </select>                    
+                  </select>
+
+                  <select [(ngModel)]="getModelo">
+                    <!-- <option *ngFor="let modelos of modelos" [value]="">{{}}</option> -->
+                  </select>
+                  
+
+                  <tr *ngFor="let modelos of modelos">
+                    <option id="input-place" value="1">{{ modelos.modeloid }}</option>
+
+
+
+
+                    <td>{{ modelos.nomedoproduto }}</td>
+                    <td>{{ modelos.colecao }}</td>
+                    <td>{{ modelos.responsavel }}</td>   </tr>
+
+
+
               </div>  
               <div class="radius-control">
                   <h3 class="radius-text">Possui bordado?</h3>
@@ -38,12 +57,18 @@
           
           <div class="card-block2"> 
               <div class="input-field2" >
-                  <select >
+                <select >
                     <option value="" disabled selected>Tipo do modelo</option>
-                    <option value="1">Sapato Social</option>
-                    <option value="2">Camiseta Básica</option>
-                    <option value="3">Calça Jeans</option>
-                  </select>                    
+                    <option value="1">bermuda</option>
+                    <option value="2">biquini</option>
+                    <option value="3">bolsa</option>
+                    <option value="4">boné</option>
+                    <option value="5">calça</option>
+                    <option value="6">calçados</option>
+                    <option value="7">camisa</option>
+                    <option value="8">chapéu</option>
+                    <option value="9">saia</option>
+                  </select>                     
               </div>                  
               <div class="form-group2">
                   <input formControlName="nome" type="text" class="form-place2" id="" placeholder="Responsável do modelo">  

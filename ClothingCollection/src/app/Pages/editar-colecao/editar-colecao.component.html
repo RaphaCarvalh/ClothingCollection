@@ -55,12 +55,15 @@
       </div>
     </div>
         <div class="buttons">
-           <div><button  type="submit" id="create" class="btn btn-primary" >Criar Conta</button></div>
+          
+           <div><tr *ngFor="let tarefa of colecoes"></tr>
+            <button  type="submit" id="remove" class="btn" (click)="excluirTarefa(tarefa)">Excluir</button></div>
+           <div><button  type="submit" id="create" class="btn btn-primary" (click)="editarTarefa(tarefa)" >Atualizar</button></div>
            <div><button  type="submit" id="reset" class="btn btn-primary" (click)="onReset()" >Limpar</button></div>
-           <div><button  type="submit" id="back" class="btn" routerLink="../colecoes" >Cancelar</button>          </div>
-      </div> 
-      
-      
+           <div><button  type="submit" id="back" class="btn" routerLink="../colecoes" >Cancelar</button></div>
+           
+      </div>         
     </form>
     </div>      
   </app-menu-topo>
+

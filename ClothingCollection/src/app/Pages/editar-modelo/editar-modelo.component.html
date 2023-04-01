@@ -1,1 +1,82 @@
-<p>editar-modelo works!</p>
+<app-menu-topo>
+  
+    <div class="Cards">
+      <mat-toolbar class="titulo">
+            <span>Editar Modelo</span>          
+      </mat-toolbar>   
+    </div>  
+    <div class="card-one-four">        
+        <form id='form' [formGroup]="f"  onsubmit="umaVez();">  
+            <div class="card-block">
+                <div class="group">              
+                <div class="form-group">
+                    <input formControlName="nome" type="text" class="form-place" placeholder="Nome do Modelo">  
+                    <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
+                        Insira algum nome!
+                    </div>
+                </div>                  
+                <div class="input-field" >
+                    <select >
+                      <option id="input-place" value="" disabled selected>Selecione a Coleção</option>
+                      <option id="input-place" value="1">Outono/Inverno</option>
+                      <option id="input-place" value="2">Primavera/Verão</option>
+                      <option id="input-place" value="3">Verão</option>
+                    </select>                    
+                </div>  
+                <div class="radius-control">
+                    <h3 class="radius-text">Possui bordado?</h3>
+                    <div class="radius-intern">
+                        <p>
+                            <input class="with-gap" name="group3" type="radio" id="test4" checked />
+                            <label for="test5">Sim</label>
+                            <input class="with-gap" name="group3" type="radio" id="test5" checked />
+                            <label for="test5">Não</label>
+                        </p>
+                    </div>                    
+                </div>                
+            </div>
+            
+            <div class="card-block2"> 
+                <div class="input-field2" >
+                    <select >
+                      <option value="" disabled selected>Tipo do modelo</option>
+                      <option value="1">bermuda</option>
+                      <option value="2">biquini</option>
+                      <option value="3">bolsa</option>
+                      <option value="4">boné</option>
+                      <option value="5">calça</option>
+                      <option value="6">calçados</option>
+                      <option value="7">camisa</option>
+                      <option value="8">chapéu</option>
+                      <option value="9">saia</option>
+                    </select>                    
+                </div>                  
+                <div class="form-group2">
+                    <input formControlName="nome" type="text" class="form-place2" id="" placeholder="Responsável do modelo">  
+                    <div *ngIf="f.get('nome').hasError('required') && f.get('nome').touched" class="form-control-feedback">
+                        Insira algum nome!
+                    </div>
+                </div>                  
+                <div class="radius-control2">
+                    <h3 class="radius-text2">Possui estampa?</h3>
+                    <div class="radius-intern2">
+                        <p>
+                            <input class="with-gap" name="group4" type="radio"  checked />
+                            <label for="test5">Sim</label>
+                            <input class="with-gap" name="group4" type="radio"  checked />
+                            <label for="test5">Não</label>
+                        </p>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+           <div><button  type="submit" id="remove" class="btn">Excluir</button></div>
+           <div><button  type="submit" id="create" class="btn btn-primary" >Criar Conta</button></div>
+           <div><button  type="submit" id="reset" class="btn btn-primary" (click)="onReset()" >Limpar</button></div>
+           <div><button  type="submit" id="back" class="btn" routerLink="../modelos">Cancelar</button>          </div>
+      </div> 
+      
+    </form>
+    </div>      
+  </app-menu-topo>

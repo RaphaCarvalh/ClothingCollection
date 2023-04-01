@@ -12,47 +12,17 @@ import { ModelosService } from 'src/app/services/modelos.service';
   styleUrls: ['./criar-modelo.component.scss']
 })
 export class CriarModeloComponent implements OnInit {
-  
-  //Captura da data
-    formatsDateTest: string[] = [
-      'MM/yy'
-    ];
-  
-    dateNow: Date = new Date();
-    dateNowISO = this.dateNow.toISOString();
-  dateNowMilliseconds = this.dateNow.getTime();
-
-
-  //valores
-
-  randonone: number;
-  randontwo: number;
-
-
-  randonOne(): number {
-    const min = 1000;
-    const max = 9999;
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
-  randonTwo(): number {
-    const min = 1;
-    const max = 99;
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
 
  
   /////Construção das requisições
     
   colecoes: Colecoes[] = [];
+
   modelos: Modelos[] = [];
+
   colect: any;
   f: FormGroup;
   form: any;
-  formularioDeLogin: any;
-  service: any;
-  http: any;
-  
 
 
   constructor(private colecoesService: ColecoesService, private modelosService: ModelosService,
@@ -64,8 +34,7 @@ export class CriarModeloComponent implements OnInit {
         })
     this.getColecao();
     this.getModelo();    
-  }
-  
+  } 
   getColecao() {
     this.colecoesService.getColecao().subscribe(data => {
       if (!data) {
@@ -87,45 +56,22 @@ export class CriarModeloComponent implements OnInit {
   }
 
 
-  async criarColecao() {
+  ngOnInit(): void {     
+  }
+ 
+  async onSubmit(): Promise<void> { 
+    
     if (this.f.valid) {
-      const colecao: Colecoes = this.f.value;
-      console.log(colecao);
-      await this.colecoesService.criarColecao(colecao).subscribe(resultado => {
+      const _modelos: Modelos = this.f.value;
+      console.log(_modelos);
+      await this.modelosService.criarModelo(_modelos).subscribe(resultado => {
         console.log(resultado);
       });
       alert('Cadastro successful')
       this.f.reset();
-      this.getColecao()
+      this.getModelo()
     }
   }
- 
-  dadosColecoes: any[] = [];
-  dadosModelos: any[] = [];
- 
-  numeroDeColecoes : number;
-  numeroDeModelos: number;
-  colecao: any;
-  mediaOrcamentos: number;
-
-  
-  ngOnInit(): void {
-    this.randonone = this.randonOne();
-    this.randontwo = this.randonTwo();
-
-    this.colecoesService.getColecao().subscribe(data => {
-      this.dadosColecoes = data;
-      this.numeroDeColecoes = this.colecoes.length;
-    });
-
-    this.modelosService.getModelo().subscribe(data => {
-      this.dadosModelos = data;
-      this.numeroDeModelos = this.modelos.length;
-    });  
-   
-  }
-
-  onSubmit(): void { };
   
   onReset(): void {
     this.f.reset();

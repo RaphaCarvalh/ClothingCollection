@@ -54,7 +54,7 @@ bash Copy code git clone https://github.com/seu-usuario/ClothingCollection.git A
 
 bash Copy code ng serve Acesse a aplicação em seu navegador no endereço http://localhost:4200.
 
-<h3>Ahhh... Não esqueça de partir o Json, afinal nossos dados vem de lá! Por enquanto😎	</h3>
+<h3>Ahhh... Não esqueça de partir o Json, afinal nossos dados vem de lá! Por enquanto😎!!</h3>
 
 1. Garanta estar na pasta raiz do projeto.
 
@@ -79,18 +79,20 @@ bash Copy code ng serve Acesse a aplicação em seu navegador no endereço http:
 📷 Demonstração A seguir, algumas demonstrações das páginas do projeto ClothingCollection:
 <div align="center">
   Controle tudo de um só lugar, monitore e acesse as principais funionalidades do sistema, com tabelas interativas tenha tudo sempre a mão!<br>
-  <img src="../ClothingCollection/src/assets/readme/controle.png"height="42" width="42" alt="Último commit">
+  <img src="../ClothingCollection/src/assets/readme/controle.png"height="400" width="520" alt="Último commit">
 </div>
 <br>
 <div align="center">
   Controle multinivel de usuarios e rotas de acesso, 
 tenha a máxima segurança na manipulação de suas informações.<br>
-  <img src="../ClothingCollection/src/assets/readme/login.png"height="42" width="42" alt="Linguagem mais utilizada">
-    <img src="../ClothingCollection/src/assets/readme/cadastro.png"height="42" width="42" alt="Linguagem mais utilizada">
+  <img src="../ClothingCollection/src/assets/readme/login.png"height="400" width="520" alt="Linguagem mais utilizada">
+    <img src="../ClothingCollection/src/assets/readme/cadastro.png"height="400" width="520" alt="Linguagem mais utilizada">
 </div>
 <br>
 <div align="center">
   Tenha total controle da sua coleção e faça o que quiser com ela.<br>
-  <img src="../ClothingCollection/src/assets/readme/edicao.png" height="42" width="42" alt="ClothingCollection Logo">
-    <img src="../ClothingCollection/src/assets/readme/cadastroitem.png" height="42" width="42" alt="ClothingCollection Logo">
+  <img src="../ClothingCollection/src/assets/readme/edicao.png" height="400" width="520" alt="ClothingCollection Logo">
+    <img src="../ClothingCollection/src/assets/readme/cadastroitem.png" height="400" width="520" alt="ClothingCollection Logo">
 </div>
+
+<br>

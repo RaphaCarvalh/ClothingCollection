@@ -18,7 +18,8 @@
               <div class="input-field" >
                   
                 <div class="col">
-                    <select required class="form-control" id="estado" formControlName="Selecionar opção">                        
+                    <select required class="form-control" id="estado" formControlName="colecao" type="text">   
+                        <input formControlName="modelo.colecao" type="text" class="form-place" placeholder="Nome do Modelo">                    
                       <option value="" selected>Selecionar coleção</option>
                       <option value="1" *ngFor="let modelo of modeloss | async " >{{ modelo.colecao }}</option>
                     </select>

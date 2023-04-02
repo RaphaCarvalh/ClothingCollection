@@ -32,12 +32,11 @@ export class CriarModeloComponent implements OnInit {
     private router: Router, private fb: FormBuilder) {      
         this.f = this.fb.group({
       
-          responsavel: ['', [Validators.required, Validators.minLength(3)]],
-          nomedoproduto: ['', [Validators.required, Validators.minLength(3)]],
-          // colecao: ['', [Validators.required]],     
+          nomedoproduto: ['', [Validators.required,]],
+          responsavel: ['', [Validators.required,]],
+          colecao: ['', [Validators.required]],     
          
         })
-    this.getColecao();
     this.getModelo();    
   } 
   getColecao() {
@@ -73,14 +72,16 @@ export class CriarModeloComponent implements OnInit {
   async onSubmit(): Promise<void> { 
     
     if (this.f.valid) {
-      const _modelos: Modelos = this.f.value;
-      console.log(_modelos);
-      await this.modelosService.criarModelo(_modelos).subscribe(resultado => {
+      const modelitos: Modelos = this.f.value;
+      console.log(modelitos);
+      await this.modelosService.criarModelo(modelitos).subscribe(resultado => {
         console.log(resultado);
       });
-      alert('Cadastro successful')
+      alert('Criado com sucesso')
       this.f.reset();
       this.getModelo()
+      console.log(modelitos);
+
     }
   }
 

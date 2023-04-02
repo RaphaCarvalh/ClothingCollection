@@ -59,7 +59,7 @@ export class CadastroComponent implements OnInit{
       await this.cadastroService.criarUser(user).subscribe(resultado => {
         console.log(resultado);
       });
-      alert('Cadastro successful')
+      alert('Cadastrado com sucesso')
       this.f.reset();
       this.listarUsers()
     }

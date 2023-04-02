@@ -21,7 +21,7 @@ criarModelo(modelos: Modelos): Observable<Modelos> {
 }
 
 //Pegando tudo
-  getModelo(): Observable<Modelos[]> {
+getModelo(): Observable<Modelos[]> {
     return this.http.get<Modelos[]>(this.baseUrl)
   }
 

@@ -7,57 +7,7 @@
       "email": "teste@user.com",
       "password": "12345678",
       "repassword": "12345678",
-      "id": 4
-    },
-    {
-      "nome": "João da Silva",
-      "empresa": "XYZ",
-      "cnpj": "12345678901234",
-      "email": "joao.silva@xyz.com",
-      "password": "abcdefgh",
-      "repassword": "abcdefgh",
-      "id": 5
-    },
-    {
-      "nome": "Maria Oliveira",
-      "empresa": "ABC",
-      "cnpj": "12345678901234",
-      "email": "maria.oliveira@abc.com",
-      "password": "ijklmnop",
-      "repassword": "ijklmnop",
-      "id": 6
-    },
-    {
-      "nome": "Pedro Santos",
-      "empresa": "DEF",
-      "cnpj": "12345678901234",
-      "email": "pedro.santos@def.com",
-      "password": "qrstuvwx",
-      "repassword": "qrstuvwx",
-      "id": 7
-    },
-    {
-      "nome": "devone.r8@gmail.com",
-      "empresa": "devone.r8@gmail.com",
-      "cnpj": "34234324243422",
-      "email": "usuario@email.com",
-      "password": "12345678",
-      "repassword": "12345678",
-      "id": 8
-    },
-    {
-      "email": "usuario@email.com",
-      "password": "12345678",
-      "id": 9
-    },
-    {
-      "nome": "Raphael",
-      "empresa": "RcComp",
-      "cnpj": "12345678000134",
-      "email": "rapha@email.com",
-      "password": "12341234",
-      "repassword": "12341234",
-      "id": 10
+      "id": 1
     }
   ],
   "modelos": [
@@ -83,13 +33,13 @@
       "modeloid": 3,
       "nomedoproduto": "Camiseta Básica",
       "responsavel": "Ana Silva",
-      "colecao": "Inverno"
+      "colecao": "Primavera"
     },
     {
       "modeloid": 3,
       "nomedoproduto": "Camiseta Básica",
       "responsavel": "Ana Silva",
-      "colecao": "Inverno"
+      "colecao": "Outono"
     }
   ],
   "colecoes": [
@@ -164,6 +114,15 @@
       "modelo": "jonres",
       "anoLancamento": "202333",
       "id": 8
+    },
+    {
+      "colecao": "as",
+      "estacao": "asas",
+      "orcamento": "asas",
+      "responsavel": "asas",
+      "modelo": "as",
+      "anoLancamento": "asas",
+      "id": 9
     }
   ],
   "email": []

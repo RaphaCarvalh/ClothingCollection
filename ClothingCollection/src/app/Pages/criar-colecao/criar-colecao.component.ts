@@ -68,7 +68,7 @@ export class CriarColecaoComponent implements OnInit {
       await this.colecoesService.criarColecao(colecao).subscribe(resultado => {
         console.log(resultado);
       });
-      alert('Cadastro successful')
+      alert('Criado com sucesso')
       this.f.reset();
       this.getColecao()
     }

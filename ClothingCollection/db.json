@@ -9,6 +9,7 @@
       "repassword": "12345678",
       "id": 1
     }
+ 
   ],
   "modelos": [
     {
@@ -123,7 +124,21 @@
       "modelo": "as",
       "anoLancamento": "asas",
       "id": 9
+    },
+    {
+      "colecao": "srat",
+      "estacao": "asd",
+      "orcamento": "asdasd",
+      "responsavel": "asdas",
+      "modelo": "dasd",
+      "anoLancamento": "asdasd",
+      "id": 10
     }
   ],
-  "email": []
+  "email": [
+    {
+      "name": "usuario@email.com",
+      "id": 1
+    }
+  ]
 }
